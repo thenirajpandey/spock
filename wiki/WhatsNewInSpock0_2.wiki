@@ -21,7 +21,7 @@ def "name length"() {
 }
 }}}
 
-Let's have a look at Gradle's test report:
+Let's have a look at the resulting test report:
 
 [http://svn.spockframework.org/wiki/FeatureUnrollingReport.png]
 
