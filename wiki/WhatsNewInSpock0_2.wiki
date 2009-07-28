@@ -101,10 +101,6 @@ If supported by your JUnit runner, you can now control which and in what order f
 
 In case your JUnit runner doesn't offer a convenient way to run selected feature methods, there is another way to accomplish the same thing: Simply annotate the methods that should be run with` @IgnoreRest`, and all other methods will be ignored.
 
-== Linking specifications to issues ==
-
-With the `@Issue` annotation, you can now link specifications and feature methods to issues in your issue tracker.
-
 == Custom condition messages ==
 
 Most of the time, it's very helpful that Spock prints out all values of a failed condition. In some cases, however, it would be better to print a custom message. This can now be achieved as follows:
@@ -114,6 +110,10 @@ assert list.size() < 99999999, "list has ${list.size()} elements"
 }}}
 
 If this condition fails, it will print the given message instead of the contents of a huge list.
+
+== Linking specifications to issues ==
+
+With the `@Issue` annotation, you can now link specifications and feature methods to issues in your issue tracker.
 
 == Other improvements in a nutshell ==
  * Better JUnit integration
