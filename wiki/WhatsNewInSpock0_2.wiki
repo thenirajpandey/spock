@@ -33,7 +33,9 @@ def "name length"() {
 }
 }}}
 
-Let's have a look at Gradle's test report: TODO
+Let's have a look at Gradle's test report:
+
+[http://svn.spockframework.org/wiki/FeatureUnrollingReport.png]
 
 By default, the name of an iteration is the feature's name followed by a consecutive number. This can be changed by providing a naming pattern after `@Unroll`. A naming pattern may refer to data variables by prepending their names with `#`. Example:
 
