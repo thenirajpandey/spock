@@ -1,5 +1,9 @@
-#summary A look at some of the upcoming features in Spock 0.2.
+#summary A look at what's new and improved in Spock 0.2.
 #labels Featured
+
+== Example project ==
+
+Getting started with Spock has never been easier. Just download the example project and kick off its Ant, Gradle, or Maven build! Everything but the JDK and build tool will be downloaded automatically. The Gradle build even works if Gradle is not pre-installed.
 
 == Accessing "old" values ==
 
