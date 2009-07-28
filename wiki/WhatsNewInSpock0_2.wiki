@@ -3,7 +3,7 @@
 
 == Example project ==
 
-Getting started with Spock has never been easier. Just download the example project and kick off its Ant, Gradle, or Maven build! Everything but the JDK and build tool will be downloaded automatically. The Gradle build even works if no build tool is pre-installed.
+Getting started with Spock has never been easier. Just download the example project ([http://spock.googlecode.com/files/spock-example-0.2.zip spock-example-02.zip]), and kick off its Ant, Gradle, or Maven build! Everything but the JDK and build tool will be downloaded automatically. The Gradle build even works if no build tool is pre-installed.
 
 == Accessing "old" values ==
 
