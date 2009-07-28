@@ -49,7 +49,9 @@ def "name length"() {
 }
 }}}
 
-Here is how this feature is displayed in IntelliJ IDEA: TODO
+Here is how this feature is displayed in IntelliJ IDEA:
+
+[http://svn.spockframework.org/wiki/FeatureUnrollingScreenshot.png]
 
 As we have seen, `@Unroll` changes the way a data-driven feature is represented in test reports and test runners. However, it is important to note that it does _not_ affect its execution semantics.
 
