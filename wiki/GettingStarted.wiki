@@ -1,12 +1,14 @@
 #summary Run your first Spock specification.
 #labels Featured
 
-This chapter explains how to run [HelloSpock HelloSpock.groovy] in the following environments:
-
-<wiki:toc />
+Getting started with Spock has never been easier: Just download the example project (spock-example-02.zip), type ./gradlew test (Windows: gradlew test), and seconds later, you will be running your first Spock specifications! The only prerequisite is that you have JDK 5 or higher installed. Everything else will be downloaded automatically. Also included are build scripts for Ant and Maven. For further instructions, see the README file.
 
 Need help? Ask in our [http://groups.google.com/group/spockframework forums].
-  
+
+The remainder of this page explains how to run [HelloSpock HelloSpock.groovy] in the following environments:
+
+<wiki:toc />
+ 
 == Command line ==
 
  * Download and setup Java 5 or higher (JRE will do for our purposes)
@@ -51,12 +53,12 @@ This section will be updated as soon as the Eclipse Groovy plugin has proper sup
 
 Checked against IDEA 8.1.2
 
- * Download and extract Groovy 1.6.x binary release ([http://groovy.codehaus.org/Download download page])
- * Download junit-4.4.jar or higher ([http://sourceforge.net/project/showfiles.php?group_id=15278&package_id=12472 download page]) 
- * Download spock-core-0.1.jar or higher ([http://code.google.com/p/spock/downloads/list download page])
+ * Download and extract Groovy 1.6.3 binary release ([http://groovy.codehaus.org/Download download page])
+ * Download junit-4.6.jar ([http://sourceforge.net/projects/junit/files/ download page]) 
+ * Download spock-core-0.2.jar ([http://code.google.com/p/spock/downloads/list download page])
  * Create a new IDEA project named !HelloSpock and add a Java module.
  * Add a Groovy facet and point the "Groovy SDK" to your Groovy folder
- * In "Module settings", add a "Single-Entry Module Library" for junit-4.4.jar, and another one for spock-core-0.1.jar
+ * In "Module settings", add a "Single-Entry Module Library" for junit-4.6.jar, and another one for spock-core-0.2.jar
  * In the src folder, create a Groovy class named !HelloSpock with the following content: [HelloSpock HelloSpock.groovy]
  * In the "Project" window, right-click on !HelloSpock and select "Run" 
 
