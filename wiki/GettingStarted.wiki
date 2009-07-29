@@ -47,7 +47,7 @@ Checked against Maven 2.1
 
 == Eclipse ==
 
-The Groovy Eclipse plugin is currently undergoing a major overhaul. A first version of the new plugin should be released shortly. Meanwhile, here is a screenshot of running a Spock specification in a development version of the plugin:
+The Groovy Eclipse plugin is currently undergoing a major overhaul. A first version of the new plugin should be released shortly. Meanwhile, here is a screenshot showing HelloSpock in a development version of the plugin:
 
 [http://svn.spockframework.org/wiki/HelloSpockScreenshotEclipse.png]
 
