@@ -23,7 +23,7 @@ Detailed instructions for these two steps can be found in the [http://groovy.cod
 
 == Ant ==
 
-Checked against Ant 1.7
+Verified against Ant 1.7
 
  * Create file build.xml with the following content: [HelloSpockBuildXml build.xml]
  * Create file src/!HelloSpock.groovy with the following content: [HelloSpock HelloSpock.groovy]
@@ -31,7 +31,7 @@ Checked against Ant 1.7
  
 == Gradle ==
 
-Checked against Gradle 0.6
+Verified against Gradle 0.6
 
  * Create file build.gradle with the following content: [HelloSpockGradleScript build.gradle]
  * Create file src/test/groovy/!HelloSpock.groovy with the following content: [HelloSpock HelloSpock.groovy]
@@ -39,7 +39,7 @@ Checked against Gradle 0.6
 
 == Maven ==
 
-Checked against Maven 2.1
+Verified against Maven 2.1
 
  * Create file pom.xml with the following content: [HelloSpockPom pom.xml]
  * Create file src/test/groovy/!HelloSpock.groovy with the following content: [HelloSpock HelloSpock.groovy]
