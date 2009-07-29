@@ -1,7 +1,7 @@
 #summary Run your first Spock specification.
 #labels Featured
 
-Getting started with Spock is really easy: Just download the example project (spock-example-02.zip), type `./gradlew test` (Windows: `gradlew test`), and seconds later, you will be running your first Spock specifications! The only prerequisite is that you have JDK 5 or higher installed. Everything else will be downloaded automatically. Also included are build scripts for Ant and Maven. For further instructions, see the README file.
+Getting started with Spock is really easy: Just download the example project ([http://spock.googlecode.com/files/spock-example-0.2.zip spock-example-02.zip]), type `./gradlew test` (Windows: `gradlew test`), and seconds later, you will be running your first Spock specifications! The only prerequisite is that you have JDK 5 or higher installed. Everything else will be downloaded automatically. Also included are build scripts for Ant and Maven. For further instructions, see the README file.
 
 Need help? Ask in our [http://groups.google.com/group/spockframework forums].
 
