@@ -1,11 +1,11 @@
 #summary Run your first Spock specification.
 #labels Featured
 
-Getting started with Spock has never been easier: Just download the example project (spock-example-02.zip), type ./gradlew test (Windows: gradlew test), and seconds later, you will be running your first Spock specifications! The only prerequisite is that you have JDK 5 or higher installed. Everything else will be downloaded automatically. Also included are build scripts for Ant and Maven. For further instructions, see the README file.
+Getting started with Spock is really easy: Just download the example project (spock-example-02.zip), type ./gradlew test (Windows: gradlew test), and seconds later, you will be running your first Spock specifications! The only prerequisite is that you have JDK 5 or higher installed. Everything else will be downloaded automatically. Also included are build scripts for Ant and Maven. For further instructions, see the README file.
 
 Need help? Ask in our [http://groups.google.com/group/spockframework forums].
 
-The remainder of this page explains how to run [HelloSpock HelloSpock.groovy] in the following environments:
+The remainder of this page explains in detail how to run [HelloSpock HelloSpock.groovy] in the following environments:
 
 <wiki:toc />
  
@@ -47,7 +47,7 @@ Verified against Maven 2.1
 
 == Eclipse ==
 
-The Groovy Eclipse plugin is currently undergoing a major overhaul. A first version of the new plugin should be released shortly. Meanwhile, here is a screenshot posted to the Groovy mailing list (thanks to Andy Clement) showing Spock in action:
+The Groovy Eclipse plugin is currently undergoing a major overhaul. A first version of the new plugin should be released shortly. Meanwhile, here is a screenshot posted to the Groovy mailing list (thanks to Andy Clement) showing !HelloSpock in action:
 
 [http://svn.spockframework.org/wiki/HelloSpockScreenshotEclipse.png]
 
