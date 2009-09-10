@@ -49,11 +49,18 @@ Verified against Maven 2.1
 
 == Eclipse ==
 
-The Groovy Eclipse plugin is currently undergoing a major overhaul. A first version of the new plugin should be released shortly. Meanwhile, here is a screenshot posted to the Groovy mailing list (thanks to Andy Clement) showing !HelloSpock in action:
+The alpha version of Groovy-Eclipse V2.0 already provides solid Spock support. Here is a screenshot: 
 
 [http://svn.spockframework.org/wiki/HelloSpockScreenshotEclipse.png]
 
-For general information about the Eclipse Groovy plugin, go to http://groovy.codehaus.org/Eclipse+Plugin.
+The following features are not yet available but expected to be included soon:
+ * Run all specifications in a file or package
+ * Run a single feature method (use Spock's `@IgnoreRest` instead)
+ * Re-run failed feature methods only
+
+*Important:* To make Spock work inside Eclipse, you must add a file `groovy.properties` with the following content to your project directory:
+{{{org.eclipse.jdt.core.compiler.groovy.groovyClassLoaderPath=%projclasspath%}}}
+For more information on Groovy-Eclipse V2.0, go to http://groovy.codehaus.org/Eclipse+Plugin.
 
 == IntelliJ IDEA ==
 
