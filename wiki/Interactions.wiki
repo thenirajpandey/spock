@@ -1,7 +1,5 @@
 #summary Learn how to specify interactions between your objects.
 
-*This article is a stub. You can help Spock by expanding it.*
-
 === Creating Mocks ===
 
 Mocks can be created for interfaces, non-final Java classes, and non-final Groovy classes (experimental). Currently all mocks are lenient. In other words, if a method call does not match any interaction, the default value for the method's return type is returned.
