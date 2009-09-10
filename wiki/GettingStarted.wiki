@@ -51,7 +51,7 @@ Verified against Maven 2.1
 
 The alpha version of Groovy-Eclipse V2.0 already provides solid Spock support.
 
-*Important:* To make Spock work inside Eclipse, you must add a`groovy.properties` file with the following content to your project directory:
+*Important:* To make Spock work inside Eclipse, you must add a `groovy.properties` file with the following content to your project directory:
 
 {{{org.eclipse.jdt.core.compiler.groovy.groovyClassLoaderPath=%projclasspath%}}}
 
@@ -68,7 +68,7 @@ For more information on Groovy-Eclipse V2.0, go to http://groovy.codehaus.org/Ec
 
 == IntelliJ IDEA ==
 
-Checked against IDEA 8.1.2
+Verified against IDEA 8.1.2
 
  * Download and extract Groovy 1.6.3 binary release ([http://groovy.codehaus.org/Download download page])
  * Download junit-4.6.jar ([http://sourceforge.net/projects/junit/files/ download page]) 
@@ -83,4 +83,4 @@ Checked against IDEA 8.1.2
 
 == Netbeans ==
 
-This section will be updated as soon as the !NetBeans Groovy plugin has proper support for running JUnit tests (and therefore Spock specifications). For general information about the !NetBeans Groovy plugin, go to http://groovy.codehaus.org/NetBeans+Plugin.
+As of Netbeans 6.7.1/6.8M1, the !NetBeans Groovy plugin does not support running JUnit 4 tests (and therefore Spock specifications). For general information about the !NetBeans Groovy plugin, go to http://groovy.codehaus.org/NetBeans+Plugin.
