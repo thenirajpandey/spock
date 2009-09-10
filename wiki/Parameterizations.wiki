@@ -1,7 +1,5 @@
 #summary Learn how to parameterize your feature methods.
 
-<strong>This article is a stub. You can help Spock by expanding it.</strong>
-
 ===Simple parameterizations===
 
 {{{
