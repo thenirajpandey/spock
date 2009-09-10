@@ -439,7 +439,7 @@ As we have seen, Spock offers lots of functionality for writing specifications. 
 
  * `@Timeout`
  Sets a timeout for execution of a feature or fixture method.
-* `@Ignore`
+ * `@Ignore`
  Ignores a feature method.
  * `@IgnoreRest`
  Ignores all feature methods not carrying this annotation. Useful for quickly running just a single method.
