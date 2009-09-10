@@ -20,19 +20,15 @@ The following sections walk you through all building blocks of which a Spock spe
 == Imports ==
 
 {{{
-import org.junit.runner.RunWith
 import spock.lang.*
-import static spock.lang.Predef.*
 }}}
 
-Package `spock.lang` contains the most important types for writing specifications. One of them is class `Predef`, which provides predefined methods and constants for use within specifications. Although `Predef` members are imported automatically, we recommend to add an explicit import statement to make them known to your IDE.
+Package `spock.lang` contains the most important types for writing specifications.
 
 == Specification ==
 
 {{{
-@Speck
-@RunWith(Sputnik)
-class MyFirstSpecification {
+class MyFirstSpecification extends Specification {
   // fields
   // fixture methods
   // feature methods
@@ -40,9 +36,19 @@ class MyFirstSpecification {
 }
 }}}
 
-A specification is represented as a Groovy class annotated with `@Speck`, which is short-hand for _Spock specification_. (Incidentally, "Speck" is also the German word for "bacon".) The name of a specification usually relates to the system or system operation described by the specification. For example, `CustomerSpec`, `H264VideoPlayback`, and `ASpaceshipAttackedFromTwoSides` all sound like reasonable names for a specification. Execution of a specification is controlled by `Sputnik`, Spock's JUnit runner. Thanks to Sputnik, Spock specifications can be run by all modern IDEs and build tools. (So much for the theory. See [GettingStarted Getting started] for what already works now, and what can be expected to work in the near future.)
+A specification is represented as a Groovy class that extends from `spock.lang.Specification`. The name of a specification usually relates to the system or system operation described by the specification. For example, `CustomerSpec`, `H264VideoPlayback`, and `ASpaceshipAttackedFromTwoSides` are all reasonable names for a specification.
 
-As you can see, a specification is not required to extend a class or implement an interface. As of Spock 0.1, the semantics of a specification that extends another specification are undefined.
+Class `Specification` (and its super class `Predef`) contains a number of useful methods for writing specifications. Furthermore it instructs JUnit to run specification with `Sputnik`, Spock's JUnit runner. Thanks to Sputnik, Spock specifications can be run by all modern IDEs and build tools. (So much for the theory. See [GettingStarted Getting started] for what already works now, and what can be expected to work in the near future.)
+
+Note: An alternative way to declare a specification is:
+
+{{{
+@Speck
+@RunWith(Sputnik)
+class MyFirstSpecification { ... }
+}}}
+
+However, we now recommend to extend class `Specification` instead.
 
 == Fields ==
 
@@ -63,7 +69,7 @@ Sometimes you need to share an object between feature methods. For example, the 
 static final PI = 3.141592654
 }}}
 
-Static fields should only be used for constants. Otherwise shared fields are preferable, because their semantics are more well-defined.
+Static fields should only be used for constants. Otherwise shared fields are preferable, because their semantics with respect to sharing are more well-defined.
 
 == Fixture Methods ==
 
@@ -156,7 +162,7 @@ As you can see, Spock captures all values produced during the evaluation of a co
 
 ===== Implicit and explicit conditions =====
 
-Because conditions are an essential ingredient of `then` blocks and `expect` blocks, all top-level expressions in these blocks are implicitly treated as conditions (unless classified as interactions). To use conditions in other places, you need to designate them with Groovy's assert keyword:
+Conditions are an essential ingredient of `then` blocks and `expect` blocks. Expect for calls to `void` methods and expressions classified as interactions, all top-level expressions in these blocks are implicitly treated as conditions. To use conditions in other places, you need to designate them with Groovy's assert keyword:
 
 {{{
 def setup() {
@@ -363,18 +369,15 @@ false                         ...
 Not very helpful. Fortunately, we can do better:
 
 {{{
-def matchesPreferredConfiguration(pc) {
+void matchesPreferredConfiguration(pc) {
   assert pc.vendor == "Sunny"
   assert pc.clockRate >= 2333
   assert pc.ram >= 4096
   assert pc.os == "Linux"
-  true
 }
 }}}
 
-As you can see, two changes need to be made when factoring out conditions into a helper method: First, the conditions must be made explicit with the `assert` keyword. Second, because _every_ method invocation in Groovy returns a value, we need to make sure that `true` is returned if everything goes well. Otherwise, the "parent" condition (`matchesPreferredConfiguration(pc)` in our case) might fail even though all "child" conditions have passed.
-
-Note: Always add `true` as the last statement of a helper method representing a condition. (Hopefully, future version of Spock will be able to overcome this pitfall.)
+When factoring out conditions into a helper method, two points need to be considered: First, implicit conditions must be turned into explicit conditions with the `assert` keyword. Second, the helper method must have return type `void`. Otherwise, Spock might interpret the return value as a failing condition, which is not what we want.
 
 As expected, the improved helper method tells us exactly what's wrong:
 
@@ -435,11 +438,13 @@ Block descriptions are not only present in source code, but are also available t
 As we have seen, Spock offers lots of functionality for writing specifications. However, there always comes a time when something else is needed. Therefore, Spock provides an interception-based extension mechanism. Extensions are activated by annotations called _directives_. Currently, Spock ships with the following directives:
 
  * `@Timeout`
- Sets a timeout for execution of a feature or fixture method. If attached to a specification, the timeout is applied to each feature method individually.
+ Sets a timeout for execution of a feature or fixture method.
+* `@Ignore`
+ Ignores a feature method.
+ * `@IgnoreRest`
+ Ignores all feature methods not carrying this annotation. Useful for quickly running just a single method.
  * `@FailsWith`
  Expects a feature method to complete abruptly. @!FailsWith has two use cases: First, to document known bugs that cannot be resolved immediately. Second, to replace exception conditions in certain corner cases where the latter cannot be used (like specifying the behavior of exception conditions). In all other cases, exception conditions are preferable.
- * `@Ignore`
- Ignores a feature method. This is a built-in directive that is not implemented as an extension.
    
 To learn how to implement your own directives and extensions, go to chapter [Extensions].
 
