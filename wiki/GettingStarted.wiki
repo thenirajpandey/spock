@@ -59,7 +59,9 @@ The following features are not yet available but expected to be included soon:
  * Re-run failed feature methods only
 
 *Important:* To make Spock work inside Eclipse, you must add a file `groovy.properties` with the following content to your project directory:
+
 {{{org.eclipse.jdt.core.compiler.groovy.groovyClassLoaderPath=%projclasspath%}}}
+
 For more information on Groovy-Eclipse V2.0, go to http://groovy.codehaus.org/Eclipse+Plugin.
 
 == IntelliJ IDEA ==
