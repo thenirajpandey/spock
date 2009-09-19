@@ -57,10 +57,6 @@ Here is a screenshot of Spock in action:
 
 [http://svn.spockframework.org/wiki/HelloSpockScreenshotEclipse.png]
 
-The following features are still missing, but should be available soon:
- * Run all specifications in a file or package
- * Re-run failed methods first
-
 For more information on Groovy-Eclipse V2.0, go to http://groovy.codehaus.org/Eclipse+Plugin.
 
 == IntelliJ IDEA ==
