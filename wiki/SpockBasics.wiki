@@ -74,10 +74,10 @@ Static fields should only be used for constants. Otherwise shared fields are pre
 == Fixture Methods ==
 
 {{{
-void setup() {}          // run before every feature method
-void cleanup() {}        // run after every feature method
-void setupSpeck() {}     // run before the first feature method
-void cleanupSpeck() {}   // run after the last feature method
+def setup() {}          // run before every feature method
+def cleanup() {}        // run after every feature method
+def setupSpeck() {}     // run before the first feature method
+def cleanupSpeck() {}   // run after the last feature method
 }}}
 
 Fixture methods are responsible for setting up and cleaning up the environment in which feature methods are run. Usually it's a good idea to use a fresh fixture for every feature method, which is what the `setup()` and `cleanup()` methods are for. Occasionally it makes sense for feature methods to share a fixture, which is achieved by using shared fields together with the `setupSpeck()` and `cleanupSpeck()` methods. All fixture methods are optional. 
