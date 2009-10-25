@@ -9,8 +9,8 @@ repositories {
 }
   
 dependencies {
-  groovy "org.codehaus.groovy:groovy-all:1.6.3"
-  compile "org.spockframework:spock-core:0.2-SNAPSHOT"
-  compile "junit:junit:4.6"  
+  groovy "org.codehaus.groovy:groovy-all:1.6.5"
+  compile "org.spockframework:spock-core:0.3-SNAPSHOT"
+  compile "junit:junit:4.7"  
 }
 }}}
