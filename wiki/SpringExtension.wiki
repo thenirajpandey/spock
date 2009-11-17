@@ -1,0 +1,24 @@
+#summary Learn how Spock integrates with the Spring TestContext framework.
+
+{{{
+@ContextConfiguration(locations = "appcontext.xml")
+class SpringExtensionExample extends Specification {
+  @Autowired
+  ItemDao dao
+
+  @Resource
+  EmailService email
+
+  @Autowired
+  ApplicationContext context
+}
+}}}
+
+The Spring extension brings Spring's TestContext framework to Spock. It relies solely on Spring's own annotations. To activate the extension, annotate a specification with @ContextConfiguration. Bean definition files will be read from the given locations and an application context will be created. To inject beans by type, use the @Autowired annotation. To inject beans by name, use the @Resource annotation. If required, you can also inject an ApplicationContext (prefer injecting beans whenever possible).
+
+Spring's TestContext framework provides many features, most of which are supported by the Spring extension. From the annotations (and underlying features) listed [http://static.springsource.org/spring/docs/2.5.6/reference/testing.html#testcontext-annotations here], all but the following are supported:
+  * @ExpectedException (use Spock's thrown() method or @FailsWith annotation instead)
+  * @Timeout (use Spock's @Timeout annotation instead) 
+  * @Repeat (Spock will likely add a similar feature in the future)
+
+To learn more about Spring's TestContext framework, see the official documentation.
