@@ -18,7 +18,9 @@ class SpringExtensionExample extends Specification {
 }
 }}}
 
-The Spring extension, currently based on Spring 2.5.x, brings Spring's `TestContext` framework to Spock. Instead of providing its own API, the extension relies solely on the `TestContext` API. To activate the extension, put the `spock-spring` Jar on the (runtime) class path, and annotate your specification with `@ContextConfiguration`. This will read bean definition files from the given locations and create an application context. (If you don't need an application context, you may omit the `locations` parameter). To inject beans by type, use the `@Autowired` annotation. To inject beans by name, use the `@Resource` annotation. If required, you can also inject an `ApplicationContext` (but you should prefer injecting beans whenever possible).
+The Spring extension, currently based on Spring 2.5.x, brings Spring's `TestContext` framework to Spock. Instead of providing its own API, the extension relies solely on the `TestContext` API. To activate the extension, put the `spock-spring` Jar on the (runtime) class path, and annotate your specification with `@ContextConfiguration`.
+
+In many cases, you will need to access Spring beans from your specification. To do so, provide the `locations` of your Spring bean definition files, and use Spring's annotation-based injection mechanism to inject the fields of your specifications. For example, `@Autowired` will inject beans by type, and `@Resource` will inject beans by name. If required, you can also inject an `ApplicationContext`. However, you should prefer injecting beans whenever possible.
 
 The `TestContext` framework provides many features, most of which are supported by the Spring extension. From the annotations listed in the [http://static.springsource.org/spring/docs/2.5.6/reference/testing.html#testcontext-annotations Spring documentation], all but the following are supported:
   * `@ExpectedException` (use Spock's thrown() method or `@FailsWith` annotation instead)
