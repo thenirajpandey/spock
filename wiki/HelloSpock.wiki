@@ -1,12 +1,9 @@
 #summary Your first Spock specification.
 
 {{{
-import org.junit.runner.RunWith
 import spock.lang.*
 
-@Speck
-@RunWith(Sputnik)
-class HelloSpock {
+class HelloSpock extends Specification {
   def "can you figure out what I'm up to?"() {
     expect:
     name.size() == size
