@@ -1,4 +1,4 @@
-#summary Learn how Spock integrates with the Spring TestContext framework.
+#summary Learn how Spock integrates with Spring's TestContext framework.
 
 {{{
 import javax.annotation.Resource
