@@ -1,6 +1,10 @@
 #summary Learn how Spock integrates with the Spring TestContext framework.
 
 {{{
+import javax.annotation.Resource
+import spock.lang.*
+// Spring imports omitted for brevity
+
 @ContextConfiguration(locations = "appcontext.xml")
 class SpringExtensionExample extends Specification {
   @Autowired
