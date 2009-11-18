@@ -27,4 +27,4 @@ The `TestContext` framework provides many features, most of which are supported 
   * `@Timed` (use Spock's `@Timeout` annotation instead) 
   * `@Repeat` (Spock will likely add a similar feature in the future)
 
-To learn more about Spring's `TestContext` framework, see the [http://static.springsource.org/spring/docs/2.5.6/reference/testing.html#testcontext-framework official documentation].
+To learn more about Spring's `TestContext` framework, see the [http://static.springsource.org/spring/docs/2.5.6/reference/testing.html#testcontext-framework official documentation]. Also take a look at the code examples in spock-spring, in particular [http://code.google.com/p/spock/source/browse/trunk/spock-spring/src/test/groovy/org/spockframework/spring/DirtiesContextExample.groovy DirtiesContextExample] and [http://code.google.com/p/spock/source/browse/trunk/spock-spring/src/test/groovy/org/spockframework/spring/TransactionalExample.groovy TransactionalExample].
