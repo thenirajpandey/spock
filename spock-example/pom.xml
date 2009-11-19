@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.spockframework</groupId>
   <artifactId>spock-example</artifactId>
-  <version>0.3</version>
+  <version>0.3-groovy-1.7</version>
   <packaging>jar</packaging>
   <name>Spock Framework - Example Project</name>
 
@@ -40,7 +40,7 @@
           <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <version>1.6.5</version>
+            <version>1.7-beta-2</version>
             <exclusions> <!-- for some reason, the following dependencies aren't marked as optional in groovy-all POM -->
               <exclusion>
                 <groupId>junit</groupId>
@@ -81,7 +81,6 @@
         <version>2.4.3</version>
         <configuration>
           <useFile>false</useFile>
-          <enableAssertions>false</enableAssertions> <!-- workaround for http://jira.codehaus.org/browse/GROOVY-3806 -->
         </configuration>
       </plugin>
 <!-- Only required for spock-example build -->
