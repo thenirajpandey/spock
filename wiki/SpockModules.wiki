@@ -1,0 +1,8 @@
+#summary The modules that the Spock Framework is composed of
+
+  * Spock Core
+  * Spock Grails
+  * Spock Guice
+  * Spock Maven
+  * Spock Spring
+  * Spock Tapestry
