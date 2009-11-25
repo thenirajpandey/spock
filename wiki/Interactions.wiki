@@ -1,6 +1,6 @@
 #summary Learn how to specify interactions between your objects.
 
-=== Creating Mocks ===
+=== Creating mocks ===
 
 Mocks can be created for interfaces, non-final Java classes, and non-final Groovy classes (experimental). Currently all mocks are lenient. In other words, if a method call does not match any interaction, the default value for the method's return type is returned.
 
@@ -66,7 +66,7 @@ _.receive(event) // receive is called on any mock object
 subscriber./set.*/(_) // any setter is called on subscriber (any regular expression allowed)
 }}}
 
-=== Argument Constraints ===
+=== Argument constraints ===
 
 {{{
 subscriber.receive(_)                      // any argument
@@ -82,7 +82,7 @@ subscriber.receive(_ as Message)           // any argument that is-a Message (nu
 subscriber.receive( { it.priority >= 5 } ) // custom constraint
 }}}
 
-=== Return Values ===
+=== Return values ===
 
 {{{
 subscriber.isAlive() >> true                     // single return value, repeated indefinitely
