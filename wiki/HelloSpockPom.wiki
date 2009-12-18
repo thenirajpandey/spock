@@ -16,9 +16,9 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.groovy.maven</groupId>
+        <groupId>org.codehaus.gmaven</groupId>
         <artifactId>gmaven-plugin</artifactId>
-        <version>1.0</version>
+        <version>1.2</version>
         <configuration>
           <providerSelection>1.6</providerSelection>
         </configuration>
@@ -33,11 +33,11 @@
       <plugin>
         <groupId>org.spockframework</groupId>
         <artifactId>spock-maven</artifactId>
-        <version>0.3-SNAPSHOT</version>
+        <version>0.4-SNAPSHOT</version>
         <executions>
           <execution>
             <goals>
-              <goal>find-specks</goal>
+              <goal>find-specs</goal>
             </goals>
           </execution>
         </executions>
@@ -49,7 +49,7 @@
     <dependency>
       <groupId>org.spockframework</groupId>
       <artifactId>spock-core</artifactId>
-      <version>0.3-SNAPSHOT</version>
+      <version>0.4-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>    
   </dependencies>
