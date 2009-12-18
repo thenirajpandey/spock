@@ -1,9 +1,9 @@
 #summary Run your first Spock specification.
 #labels Featured
 
-The easiest way to get started with Spock is to go to http://meet.spockframework.org, which lets you view, edit, run and even publish Spock specifications for others to see. Zero install required!
+The easiest way to get to know Spock is http://meet.spockframework.org, which instantly lets you view, edit, run and even publish Spock specifications for others to see. Zero install required!
 
-If you prefer to run Spock locally, just download the example project ([http://spock.googlecode.com/files/spock-example-0.3.zip spock-example-03.zip]) and type `./gradlew test` (Windows: `gradlew test`). Seconds later, you will be running your first Spock specifications. The only prerequisite is that you have JDK 5 or higher installed. Everything else will be downloaded automatically. Also included are build scripts for Ant and Maven. For further instructions, see the README file.
+If you prefer to run Spock on your machine, just download the example project ([http://spock.googlecode.com/files/spock-example-0.3.zip spock-example-03.zip]) and type `./gradlew test` (Windows: `gradlew test`). Seconds later, you will be running your first Spock specifications. The only prerequisite is that you have JDK 5 or higher installed. Everything else will be downloaded automatically. Also included are build scripts for Ant and Maven. For further instructions, see the README file.
 
 Need help? Ask in our [http://groups.google.com/group/spockframework forum]!
 
