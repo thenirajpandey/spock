@@ -58,7 +58,7 @@ The pre-release version of the Groovy Eclipse plugin V2.0 already provides solid
 
 Here is a screenshot of Spock in action: 
 
-[http://svn.spockframework.org/wiki/HelloSpockScreenshotEclipse.png]
+[http://code.spockframework.org/wiki/HelloSpockScreenshotEclipse.png]
 
 For more information on Groovy-Eclipse V2.0, go to http://groovy.codehaus.org/Eclipse+Plugin.
 
@@ -75,7 +75,7 @@ Verified against IDEA 8.1.2
  * In the src folder, create a Groovy class named !HelloSpock with the following content: [HelloSpock HelloSpock.groovy]
  * In the "Project" window, right-click on !HelloSpock and select "Run" 
 
-[http://svn.spockframework.org/wiki/HelloSpockScreenshotIdea.png]
+[http://code.spockframework.org/wiki/HelloSpockScreenshotIdea.png]
 
 == Netbeans ==
 
