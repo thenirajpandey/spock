@@ -49,9 +49,12 @@ Verified against Maven 2.1
 
 == Eclipse ==
 
-The pre-release version of Groovy-Eclipse V2.0 already provides solid Spock support.
+The pre-release version of the Groovy Eclipse plugin V2.0 already provides solid Spock support.
 
-*Important:* Make sure you are using the latest update of the plugin.
+*Important Information:* 
+ * The Groovy Eclipse plugin is evolving rapidly. Currently we recommend to use the latest snapshot from http://dist.codehaus.org/groovy/distributions/greclipse/snapshot/e3.5, and to update it frequently.
+ * By default, the Groovy Eclipse plugin uses (a pre-release version of) Groovy 1.7. For Groovy 1.7 you need Spock 0.4-groovy-1.7-SNAPSHOT, which is available from http://m2repo.spockframework.org/snapshots. From Spock 0.4 final onwards, the Groovy 1.7 version of Spock will also be available from Maven Central.
+ * Make sure you have a source attachment set for the spock-core Jar. (Otherwise you might run into the following Eclipse JDT bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=175582) If you have a Maven project, the easiest way to achieve this is `mvn eclipse:eclipse -DdownloadSources`.  
 
 Here is a screenshot of Spock in action: 
 
