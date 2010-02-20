@@ -38,17 +38,7 @@ class MyFirstSpecification extends Specification {
 
 A specification is represented as a Groovy class that extends from `spock.lang.Specification`. The name of a specification usually relates to the system or system operation described by the specification. For example, `CustomerSpec`, `H264VideoPlayback`, and `ASpaceshipAttackedFromTwoSides` are all reasonable names for a specification.
 
-Class `Specification` (and its super class `Predef`) contains a number of useful methods for writing specifications. Furthermore it instructs JUnit to run specification with `Sputnik`, Spock's JUnit runner. Thanks to Sputnik, Spock specifications can be run by all modern IDEs and build tools. (So much for the theory. See [GettingStarted Getting started] for what already works now, and what can be expected to work in the near future.)
-
-Note: An alternative way to declare a specification is:
-
-{{{
-@Speck
-@RunWith(Sputnik)
-class MyFirstSpecification { ... }
-}}}
-
-However, we now recommend to extend class `Specification` instead.
+Class `Specification` contains a number of useful methods for writing specifications. Furthermore it instructs JUnit to run specification with `Sputnik`, Spock's JUnit runner. Thanks to Sputnik, Spock specifications can be run by all modern IDEs and build tools. (So much for the theory. See [GettingStarted Getting started] for what already works now, and what can be expected to work in the near future.)
 
 == Fields ==
 
@@ -63,7 +53,7 @@ Instance fields are a good place to store objects belonging to the specification
 @Shared res = new VeryExpensiveResource()
 }}}
 
-Sometimes you need to share an object between feature methods. For example, the object might be very expensive to create, or you might want your feature methods to interact with each other. To achieve this, declare a `@Shared` field. Again it's best to initialize the field right at the point of declaration. (Semantically, this is equivalent to initializing the field at the very beginning of the `setupSpeck()` method.)
+Sometimes you need to share an object between feature methods. For example, the object might be very expensive to create, or you might want your feature methods to interact with each other. To achieve this, declare a `@Shared` field. Again it's best to initialize the field right at the point of declaration. (Semantically, this is equivalent to initializing the field at the very beginning of the `setupSpec()` method.)
 
 {{{
 static final PI = 3.141592654
@@ -76,13 +66,13 @@ Static fields should only be used for constants. Otherwise shared fields are pre
 {{{
 def setup() {}          // run before every feature method
 def cleanup() {}        // run after every feature method
-def setupSpeck() {}     // run before the first feature method
-def cleanupSpeck() {}   // run after the last feature method
+def setupSpec() {}     // run before the first feature method
+def cleanupSpec() {}   // run after the last feature method
 }}}
 
-Fixture methods are responsible for setting up and cleaning up the environment in which feature methods are run. Usually it's a good idea to use a fresh fixture for every feature method, which is what the `setup()` and `cleanup()` methods are for. Occasionally it makes sense for feature methods to share a fixture, which is achieved by using shared fields together with the `setupSpeck()` and `cleanupSpeck()` methods. All fixture methods are optional. 
+Fixture methods are responsible for setting up and cleaning up the environment in which feature methods are run. Usually it's a good idea to use a fresh fixture for every feature method, which is what the `setup()` and `cleanup()` methods are for. Occasionally it makes sense for feature methods to share a fixture, which is achieved by using shared fields together with the `setupSpec()` and `cleanupSpec()` methods. All fixture methods are optional. 
 
-Note: The `setupSpeck()` and `cleanupSpeck()` methods may not reference instance fields.
+Note: The `setupSpec()` and `cleanupSpec()` methods may not reference instance fields.
 
 == Feature Methods ==
 
@@ -175,7 +165,7 @@ If an explicit condition is violated, it will produce the same nice diagnostic m
 
 ===== Exception Conditions =====
 
-Exception conditions are used to describe that a `when` block should throw an exception. They are defined using the `Predef.thrown()` method, passing along the expected exception type. For example, to describe that popping from an empty stack should throw an `EmptyStackException`, you could write the following:
+Exception conditions are used to describe that a `when` block should throw an exception. They are defined using the `thrown()` method, passing along the expected exception type. For example, to describe that popping from an empty stack should throw an `EmptyStackException`, you could write the following:
 
 {{{
 when:
@@ -456,8 +446,8 @@ Although Spock uses a different terminology, many of its concepts and features a
 || Specification || Test class ||
 || `setup()` || `@Before` ||
 || `cleanup()` || `@After` ||
-|| `setupSpeck()` || `@BeforeClass` ||
-|| `cleanupSpeck()` || `@AfterClass` ||
+|| `setupSpec()` || `@BeforeClass` ||
+|| `cleanupSpec()` || `@AfterClass` ||
 || Feature || Test ||
 || Parameterized feature || Theory ||
 || Condition || Assertion ||
