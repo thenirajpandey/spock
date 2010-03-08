@@ -1,5 +1,7 @@
 #summary Learn how Spock integrates with Spring's TestContext framework.
 
+Compatible with Spring 2.5 and Spring 3.
+
 {{{
 import javax.annotation.Resource
 import spock.lang.*
@@ -18,7 +20,7 @@ class SpringExtensionExample extends Specification {
 }
 }}}
 
-The Spring extension, currently based on Spring 2.5.x, brings Spring's `TestContext` framework to Spock. Instead of providing its own API, the extension relies solely on the `TestContext` API. To activate the extension, annotate your specification with `@ContextConfiguration`. Additionally, at least the following Jars have to be present on the runtime class path:
+The Spring extension brings Spring's `TestContext` framework to Spock. Instead of providing its own API, the extension relies solely on the `TestContext` API. To activate the extension, annotate your specification with `@ContextConfiguration`. Additionally, at least the following Jars have to be present on the runtime class path:
   * `spring-beans`
   * `spring-test`
   * `spock-spring`
