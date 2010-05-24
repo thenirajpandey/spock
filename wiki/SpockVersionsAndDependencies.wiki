@@ -3,7 +3,7 @@
 Spock requires Java SE 5.0 or higher. A particular Spock version (0.3, 0.4, etc.) will usually support multiple Groovy versions (1.6, 1.7, etc). This is done by having separate Spock Jars for each supported combination of Spock version and Groovy major version: spock-core-0.4-groovy-1.6.jar, spock-spring-0.4-groovy-1.7.jar, etc.
 
 || Spock version || Groovy version || JUnit version || Grails version || Spring version ||
-|| 0.4-groovy-1.6 || 1.6.1-1.6.x  || 4.1-4.x || 1.2.0-1.2.x || 2.5.x-3.x ||
-|| 0.4-groovy-1.7 || 1.7.0-1.7.x  || 4.1-4.x || 1.3.0-1.3.x || 2.5.x-3.x ||
+|| 0.4-groovy-1.6 || 1.6.1-1.6.x  || 4.7-4.x || 1.2.0-1.2.x || 2.5.x-3.x ||
+|| 0.4-groovy-1.7 || 1.7.0-1.7.x  || 4.7-4.x || 1.3.0-1.3.x || 2.5.x-3.x ||
 
 Note: Grails version applies to Grails plugin. Spring version applies to Spring extension.
