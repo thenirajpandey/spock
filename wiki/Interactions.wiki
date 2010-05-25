@@ -151,11 +151,11 @@ when:
 publisher.publish.event
 
 then:
-subscriber1.receive(event)
-subscriber2.receive(event) // order of interaction within same then-block is not defined; hence subscriber1 might be called before subscriber2, or the other way around
+1 * subscriber1.receive(event)
+1 * subscriber2.receive(event) // order of interaction within same then-block is not defined; hence subscriber1 might be notified before subscriber2, or the other way around
 
 then:
-subscriber3.receive(event) // must come after all interactions in previous then-blocks; hence, subscriber3 must be called after both subscriber1 and subscriber2 
+1 * subscriber3.receive(event) // must come after all interactions in previous then-blocks; hence, subscriber3 must be notified after both subscriber1 and subscriber2 
 }}}
 
 === Shortcut notation for "any interaction" ===
