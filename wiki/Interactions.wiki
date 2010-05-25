@@ -2,7 +2,7 @@
 
 === Creating mocks ===
 
-Mocks can be created for interfaces, non-final Java classes, and non-final Groovy classes (experimental). Currently all mocks are lenient. In other words, if a method call does not match any interaction, the default value for the method's return type is returned.
+Mocks can be created for interfaces, non-final Java classes, and non-final Groovy classes (experimental). All mocks are lenient. In other words, if a method call does not match any interaction, the default value for the method's return type is returned.
 
 {{{
 def subscriber = Mock(Subscriber) // "dynamic" style (mock name inferred from variable name)
@@ -55,6 +55,10 @@ n * subscriber.receive(event)      // exactly n times
 }}}
 
 === Target constraints ===
+
+{{{
+subscriber.receive(event) // receive is called on 'subscriber'
+}}}
 
 {{{
 _.receive(event) // receive is called on any mock object
@@ -111,7 +115,7 @@ If an interaction definition in a `then` block depends on other code in the same
 then:
 interaction {
   def count = 3
-  count * suscriber.receive(_)
+  count * subscriber.receive(_)
 }
 }}}
 
@@ -130,3 +134,35 @@ def subscriberReceivesThreeMessages() {
   // you may define additional interactions here
 }
 }}}
+
+== New in 0.4 ==
+
+=== Property syntax ===
+
+{{{
+subscriber.alive >> 5 // may use property syntax instead of method syntax for reading values
+subscriber./a.*/ >> 5 // regex also supported for properties
+}}}
+
+=== Ordered interactions ===
+
+{{{
+when:
+publisher.publish.event
+
+then:
+subscriber1.receive(event)
+subscriber2.receive(event) // order of interaction within same then-block is not defined; hence subscriber1 might be called before subscriber2, or the other way around
+
+then:
+subscriber3.receive(event) // must come after all interactions in previous then-blocks; hence, subscriber3 must be called after both subscriber1 and subscriber2 
+}}}
+
+=== Shortcut notation for "any interaction" ===
+
+0 * _ // _ is shortcut for _._
+
+=== Sensible default behavior for equals(Object), hashCode(), toString() ===
+
+By default, a mock will only be equal to itself, will return System.identityHashCode() for its hash code, and will return a descriptive message for toString(). Nevertheless, these methods can still be stubbed (or even mocked) if desired. 
+Furthermore, these methods no longer match the wildcard method name _. This is to avoid fragile tests that break once a test is debugged and the debugger calls one of these methods. 
