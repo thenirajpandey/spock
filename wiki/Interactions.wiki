@@ -152,7 +152,7 @@ publisher.publish.event
 
 then:
 1 * subscriber1.receive(event)
-1 * subscriber2.receive(event) // order of interaction within same then-block is not defined; hence subscriber1 might be notified either before or after subscriber2
+1 * subscriber2.receive(event) // order of interaction within same then-block is not defined; hence, subscriber1 might be notified either before or after subscriber2
 
 then:
 1 * subscriber3.receive(event) // must come after all interactions in previous then-blocks; hence, subscriber3 must be notified after both subscriber1 and subscriber2 
