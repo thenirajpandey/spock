@@ -167,4 +167,4 @@ subscriber3.receive(event) // must come after all interactions in previous then-
 === Sensible default behavior for equals(Object), hashCode(), toString() ===
 
 By default, a mock will only be equal to itself, will return System.identityHashCode() for its hash code, and will return a descriptive message for toString(). Nevertheless, these methods can still be stubbed (or even mocked) if desired. 
-Furthermore, these methods no longer match the wildcard method name (_). This is to avoid fragile tests that break once a test is debugged and the debugger calls one of these methods. 
+Furthermore, these methods no longer match the wildcard method name `_`. This is to avoid fragile tests that break once a test is debugged and the debugger calls one of these methods. 
