@@ -33,7 +33,7 @@
       <plugin>
         <groupId>org.spockframework</groupId>
         <artifactId>spock-maven</artifactId>
-        <version>0.4-SNAPSHOT</version>
+        <version>0.4-groovy-1.6</version>
         <executions>
           <execution>
             <goals>
@@ -49,7 +49,7 @@
     <dependency>
       <groupId>org.spockframework</groupId>
       <artifactId>spock-core</artifactId>
-      <version>0.4-SNAPSHOT</version>
+      <version>0.4-groovy-1.6</version>
       <scope>test</scope>
     </dependency>    
   </dependencies>
