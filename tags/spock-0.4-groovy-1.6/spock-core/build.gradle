@@ -1,0 +1,10 @@
+project(":spock-core") {  
+  dependencies {
+    compile asm
+    compile junit
+    compile cglib
+    compile objenesis
+    compile antDep
+  }
+}
+
