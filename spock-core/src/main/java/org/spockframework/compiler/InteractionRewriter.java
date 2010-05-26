@@ -153,7 +153,7 @@ public class InteractionRewriter {
     builderExpr = new ConstructorCallExpression(
         resourceProvider.getAstNodeCache().InteractionBuilder,
         new ArgumentListExpression(
-            Arrays.asList(
+            Arrays.<Expression> asList(
                 new ConstantExpression(expr.getLineNumber()),
                 new ConstantExpression(expr.getColumnNumber()),
                 new ConstantExpression(resourceProvider.getSourceText(expr)))));
@@ -245,13 +245,13 @@ public class InteractionRewriter {
 
   @SuppressWarnings("unchecked")
   private void addPositionalArgs(ArgumentListExpression args) {
-    for (Expression arg: (List<Expression>)args.getExpressions())
+    for (Expression arg: args.getExpressions())
       addArg(arg);
   }
 
   @SuppressWarnings("unchecked")
   private void addNamedArgs(NamedArgumentListExpression args) {
-    for (MapEntryExpression arg : (List<MapEntryExpression>)args.getMapEntryExpressions()) {
+    for (MapEntryExpression arg : args.getMapEntryExpressions()) {
       addName(arg.getKeyExpression());
       addArg(arg.getValueExpression());
     }

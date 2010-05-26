@@ -1,5 +1,5 @@
 project(":spock-core") {  
-  dependencies {
+  dependencies {  
     compile asm
     compile junit
     compile cglib

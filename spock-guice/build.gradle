@@ -1,5 +1,5 @@
 project(":spock-guice") {
-  dependencies {
+  dependencies {  
     compile project(":spock-core")
     compile "com.google.inject:guice:2.0"
     // surfaces in the Guice API; groovyc complains if we don't add it

@@ -24,14 +24,16 @@ grails.project.dependency.resolution = {
 
   repositories {
     grailsHome()
-    
+    grailsCentral()
+
     mavenLocal() // prefer local, so we pick up spock snapshot as part of whole build
     mavenRepo "http://m2repo.spockframework.org/snapshots"
+    mavenRepo "http://repository.jboss.org/maven2" // for javax.security:jaas and javax.security:jacc (required by Hibernate plugin)
     mavenCentral()
   }
   
   dependencies {
-    build 'org.spockframework:spock-core:0.4-SNAPSHOT'
+    build 'org.spockframework:spock-core:0.4-groovy-1.7'
     build 'junit:junit:4.8.1'
     
     test('net.sourceforge.htmlunit:htmlunit:2.7') {

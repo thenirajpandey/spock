@@ -26,7 +26,7 @@
       <dependency
         groupId="org.spockframework"
         artifactId="spock-core"
-        version="0.4-groovy-1.6" />
+        version="0.4-groovy-1.7" />
 <!-- Optional dependencies for using Spock -->
       <!-- enables mocking of classes (in addition to interfaces) -->
       <dependency 
@@ -42,7 +42,7 @@
       <dependency
         groupId="asm"
         artifactId="asm"
-        version="2.2.3" />
+        version="3.2" />
 <!-- Dependencies used by examples in this project (not required for using Spock) -->
       <dependency
         groupId="com.h2database"

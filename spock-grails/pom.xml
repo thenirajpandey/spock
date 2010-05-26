@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.spockframework</groupId>
     <artifactId>spock-parent</artifactId>
-    <version>0.4-groovy-1.6</version>
+    <version>0.4-groovy-1.7</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -15,8 +15,9 @@
   <url>http://grails.org/plugin/spock</url>
 
   <properties>
-    <grails.version>1.2.2</grails.version>
-  </properties>
+    <grails.version>1.3.1</grails.version>
+  </properties>   
+
   <dependencies>
     <dependency>
       <groupId>org.spockframework</groupId>
@@ -42,13 +43,38 @@
       <groupId>org.grails</groupId>
       <artifactId>grails-gorm</artifactId>
       <version>${grails.version}</version>
+      <exclusions>
+        <exclusion> <!-- grails-gorm POM requires version 3.4.0.ga of this dependency which doesn't exist -->
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-commons-annotations</artifactId> 
+        </exclusion>
+        <exclusion> <!-- grails-gorm POM requires version 3.4.0.ga of this dependency but it's 3.4.0.GA -->
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-annotations</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-commons-annotations</artifactId>
+      <version>3.1.0.GA</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-annotations</artifactId>
+      <version>3.4.0.GA</version>
+      <exclusions>
+        <exclusion>
+          <groupId>xml-apis</groupId>
+          <artifactId>xml-apis</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.grails</groupId>
       <artifactId>grails-test</artifactId>
       <version>${grails.version}</version>
     </dependency>
-
     <dependency>
       <groupId>net.sourceforge.htmlunit</groupId>
       <artifactId>htmlunit</artifactId>
@@ -123,7 +149,7 @@
   </dependencies>
 
   <repositories>
-<!-- Required to get hold of JTA -->
+    <!-- Required to get hold of JTA -->
     <repository>
       <id>dev.java.net</id>
       <url>http://download.java.net/maven/2/</url>
@@ -136,12 +162,24 @@
       <id>springsource</id>
       <url>http://maven.springframework.org/release</url>
     </repository>
+    <!-- necessary to compensate for the fact that org.grails:grails:1.3.0.RC2:pom
+    is missing from public Maven repos -->
+    <repository>
+      <id>spock-snapshots</id>
+      <url>http://m2repo.spockframework.org/snapshots</url>
+    </repository>
+    <!-- necessary to compensate for the fact that GPars 0.9 POM mistakenly has non-optional
+     dependency on netty. Excludes don't work because grails-maven-plugin ignores them. -->
+    <repository>
+      <id>jboss</id>
+      <url>http://repository.jboss.com/maven2</url>
+    </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
-	  <id>codehaus</id>
-	  <url>http://repository.codehaus.org</url>
+      <id>codehaus</id>
+      <url>http://repository.codehaus.org</url>
     </pluginRepository>
   </pluginRepositories>
 
@@ -187,6 +225,21 @@
               <command>package-plugin</command>
             </configuration>
           </execution>
+<!--
+          <execution>
+            <id>release-plugin</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <command>release-plugin</command>
+              <args>- -non-interactive - -zipOnly - -username=${grails.plugin.repo.user}
+                - -password=${grails.plugin.repo.password} - -message=${grails.plugin.repo.commit.msg}
+              </args>
+            </configuration>
+          </execution>
+-->
         </executions>
       </plugin>
       <plugin>

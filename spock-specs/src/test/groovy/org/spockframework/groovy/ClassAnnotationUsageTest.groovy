@@ -99,7 +99,7 @@ class JavaRuntime {}
     def classNode = inspector.getClass(className)
 
     // annotation present?
-    assertEquals(1, classNode.annotations.size())
+    assertTrue(classNode.annotations.size() == 1)
 
     // retention policy set correctly?
     def annNode = classNode.annotations[0]
@@ -113,20 +113,13 @@ class JavaRuntime {}
 
   // Checks the annotation's runtime representation. Ideally one should also
   // check the class file (to differentiate between source and class retention);
-  // however, this is out of the scope of this test.
+  // however, this is out of scope for this test.
   def checkRuntimeInfo(className, annType, sourceRet, classRet) {
     def classObj = classes.find { it.name == className }
     assertNotNull(classObj)
 
     // annotation only available if it has runtime retention?
-    if (sourceRet || classRet)
-      assertEquals(0, classObj.annotations.size())
-    else { // runtimeRet
-      assertEquals(1, classObj.annotations.size())
-      def annObj = classObj.annotations[0]
-      // annotation of expected type?
-      assertTrue(annType.isInstance(annObj))
-    }
+    assertEquals(!sourceRet && !classRet, classObj.isAnnotationPresent(annType))
   }
 }
 

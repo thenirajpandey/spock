@@ -104,7 +104,7 @@ public class WhereBlockRewriter {
             Parameter.EMPTY_ARRAY,
             ClassNode.EMPTY_ARRAY,
             new BlockStatement(
-                Arrays.asList(
+                Arrays.<Statement> asList(
                     new ReturnStatement(
                         new ExpressionStatement(dataProviderExpr))),
                 new VariableScope()));
@@ -316,6 +316,7 @@ public class WhereBlockRewriter {
     whereBlock.getParent().getAst().setParameters(parameters);
   }
 
+  @SuppressWarnings("unchecked")
   private void createDataProcessorMethod() {
     if (dataProcessorVars.isEmpty()) return;
     
@@ -323,7 +324,7 @@ public class WhereBlockRewriter {
         new ReturnStatement(
             new ArrayExpression(
                 ClassHelper.OBJECT_TYPE,
-                dataProcessorVars)));
+                (List)dataProcessorVars)));
 
     whereBlock.getParent().getParent().getAst().addMethod(
       new MethodNode(
