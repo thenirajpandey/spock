@@ -1,5 +1,4 @@
 #summary A look at what's new and improved in Spock 0.2.
-#labels Featured
 
 == Getting started ==
 
