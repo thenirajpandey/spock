@@ -28,6 +28,9 @@ Specs inheriting from other specs are treated as follows: All `beforeRegistryCre
 Basic usage example (don't forget to put the spock-tapestry Jar on the test (runtime) class path): 
 
 {{{
+import org.apache.tapestry5.ioc.annotations.*
+import spock.lang.*
+
 @SubModule(UniverseModule)
 class UniverseSpec extends Specification {
   @Inject
