@@ -13,7 +13,7 @@ The Tapestry extension is activated by putting the spock-tapestry Jar on the tes
 
 Shared fields will be injected once per specification; regular fields once per feature (iteration). However, this does _not_ mean that a fresh service instance will be created for each injection; rather, control over a service's scope is left to Tapestry. Most Tapestry services use the default _singleton_ scope, which will result in the same service instance being injected every time.
 
-Feature methods that require their own service instance(s) should be moved into separate specifications. To avoid code fragmentation and duplication, multiple specifications can be put into the same source file, and commonalities factored out into a base class. Alternatively, a service definition (in a module created specifically to aid testing) may be marked with `@Scope("perIteration")`. In this case, a fresh service instance will be created for every feature (iteration). 
+Feature methods that require their own service instance(s) should be moved into separate specifications. To avoid code fragmentation and duplication, multiple specifications can be put into the same source file, with their commonalities factored out into a base class. Alternatively, a service definition (in a module created specifically to aid testing) may be marked with `@Scope("perIteration")`, resulting in the creation of a fresh service instance for every feature (iteration). 
 
 Sometimes it can be necessary to perform setup work before the Tapestry registry has been created. This is achieved with the following callback:
  
