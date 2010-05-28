@@ -7,7 +7,7 @@ The Tapestry extension does not provide an API. Instead, it relies on Tapestry's
  * `@SubModule` indicates which Tapestry module(s) should be created (and subsequently shut down) for a spec
  * `@Inject` indicates that a spec field should be injected with a Tapestry service or symbol
 
-Other annotations such as `@Service`, `@Symbol`, and `@Value` are also supported. For information on their use, see the [http://tapestry.apache.org/tapestry5/tapestry-ioc/|Tapestry IoC documentation]. To interact directly with the Tapestry registry, define an injection point of type `ObjectLocator`. However, this should be rarely needed.
+Other annotations such as `@Service`, `@Symbol`, and `@Value` are also supported. For information on their use, see the [http://tapestry.apache.org/tapestry5/tapestry-ioc/ Tapestry IoC documentation]. To interact directly with the Tapestry registry, define an injection point of type `ObjectLocator`. However, this should be rarely needed.
  
 The Tapestry extension is activated by putting the spock-tapestry Jar on the test (runtime) class path. Once activated, the extension will create a Tapestry registry for every spec annotated with `@SubModule`, and inject the spec's fields. Because this happens _before_ field initializers and the `setup()` and `setupSpec()` methods are run, all injected values can be safely accessed from those places. Shutdown of the Tapestry registry will occur after the `cleanupSpec()` method has completed (if it exists). Therefore, injected services may also be used within `cleanup()` and `cleanupSpec()`.
 
@@ -43,4 +43,4 @@ class UniverseSpec extends Specification {
 }
 }}}   
 
-For more examples, see the specs in the [http://code.google.com/p/spock/source/browse/#svn/trunk/spock-tapestry/src/test/groovy/org/spockframework/tapestry/|spock-tapestry] module.                                   
+For more examples, see the specs in the [http://code.google.com/p/spock/source/browse/#svn/trunk/spock-tapestry/src/test/groovy/org/spockframework/tapestry/ spock-tapestry] module.                                   
