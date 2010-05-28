@@ -21,7 +21,7 @@ Sometimes it can be necessary to perform setup work before the Tapestry registry
 def beforeRegistryCreated() { /* do work here */ }  
 }}}
 
-If `beforeRegistryCreated()` returns a `Registry` instance, that instance will be used to do all injection, and any arguments to `@SubModule` will be ignored. Note, however, that the `@SubModule` annotation itself is still required in order to activate the Tapestry extension for the spec.   
+If `beforeRegistryCreated()` returns a `Registry` instance, that instance will be used to do all injection, and any arguments to `@SubModule` will be ignored. For example, this makes it possible to use [http://tapestry.apache.org/tapestry5/apidocs/org/apache/tapestry5/test/PageTester.html PageTester] and still have services injected. Note, however, that the `@SubModule` annotation itself is still required in order to activate the Tapestry extension for the spec.   
 
 Specs inheriting from other specs are treated as follows: All `beforeRegistryCreated()` callbacks along the inheritance chain are invoked (in parent-child order), all `@SubModule` annotations considered, all of the listed modules created, and all annotated fields injected.
 
