@@ -25,7 +25,7 @@ If `beforeRegistryCreated()` returns a `Registry` instance, that instance will b
 
 Specs inheriting from other specs are treated as follows: All `beforeRegistryCreated()` callbacks along the inheritance chain are invoked (in parent-child order), all `@SubModule` annotations considered, all of the listed modules created, and all annotated fields injected.
 
-Basic usage example (don't forget to put the spock-tapestry Jar on the test (runtime) class path): 
+Basic usage example (don't forget to put the spock-tapestry Jar on the test class path!): 
 
 {{{
 import org.apache.tapestry5.ioc.annotations.*
