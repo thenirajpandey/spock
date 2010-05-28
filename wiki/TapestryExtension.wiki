@@ -43,4 +43,4 @@ class UniverseSpec extends Specification {
 }
 }}}   
 
-For more examples, see the specs in the [http://code.google.com/p/spock/source/browse/#svn/trunk/spock-tapestry/src/test/groovy/org/spockframework/tapestry|spock-tapestry] module.                                   
+For more examples, see the specs in the [http://code.google.com/p/spock/source/browse/#svn/trunk/spock-tapestry/src/test/groovy/org/spockframework/tapestry/|spock-tapestry] module.                                   
