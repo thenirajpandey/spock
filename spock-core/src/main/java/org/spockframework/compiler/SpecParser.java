@@ -70,10 +70,22 @@ public class SpecParser implements GroovyClassVisitor {
 
   public void visitConstructor(ConstructorNode constructor) {
     if (AstUtil.isSynthetic(constructor)) return;
+    if (constructorMayHaveBeenAddedByCompiler(constructor)) return;
 
     errorReporter.error(constructor,
 "Constructors are not allowed; instead, define a 'setup()' or 'setupSpec()' method");
    }
+
+  // In case of joint compilation, Verifier - which may add a default constructor
+  // - is run in phase CONVERSION. Additionally, groovyc 1.7 and above no longer
+  // marks default constructors as synthetic (following javac). Therefore, we have
+  // to add special logic to detect this case.
+  private boolean constructorMayHaveBeenAddedByCompiler(ConstructorNode constructor) {
+    Parameter[] params = constructor.getParameters();
+    Statement firstStat = constructor.getFirstStatement();
+    return AstUtil.isJointCompiled(spec.getAst()) && constructor.isPublic()
+      && params != null && params.length == 0 && firstStat == null;
+  }
 
   public void visitMethod(MethodNode method) {
     if (isIgnoredMethod(method)) return;
