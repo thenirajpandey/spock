@@ -1,0 +1,52 @@
+/*
+ * Copyright 2009 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.spockframework.runtime;
+
+/**
+ *
+ * @author Peter Niederwieser
+ */
+public class SpockAssertionError extends AssertionError {
+  private volatile String msg;
+
+  public SpockAssertionError() {
+    this(null, null);
+  }
+
+  public SpockAssertionError(String msg) {
+    this(msg, null);
+  }
+  
+  public SpockAssertionError(Throwable cause) {
+    this(null, cause);
+  }
+
+  public SpockAssertionError(String msg, Throwable cause) {
+    this.msg = msg;
+    initCause(cause);
+  }
+
+  public SpockAssertionError withArgs(Object... args) {
+    msg = String.format(msg, args);
+    return this;
+  }
+
+  @Override
+  public String getMessage() {
+    return msg;
+  }
+}
