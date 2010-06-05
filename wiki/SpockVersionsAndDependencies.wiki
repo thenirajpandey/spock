@@ -4,7 +4,7 @@ Spock requires Java SE 5.0 or higher. Make sure to pick a Spock version that mat
 
 == Release Versions ==
 
-Releases are available from http://repo1.maven.org/org/spockframework and http://m2repo.spockframework.org/releases.
+Releases are available from http://repo1.maven.org/maven2/org/spockframework and http://m2repo.spockframework.org/releases.
 
 || Spock version || Groovy version || JUnit version || Grails version || Spring version ||
 || 0.4-groovy-1.6 || 1.6.1-1.6.x  || 4.7-4.x || 1.2.0-1.2.x || 2.5.0-3.x ||
