@@ -10,7 +10,7 @@ repositories {
   
 dependencies {
   groovy "org.codehaus.groovy:groovy-all:1.7.4"
-  compile "org.spockframework:spock-core:0.4-groovy-1.7"
-  compile "junit:junit:4.8.1"  
+  testCompile "org.spockframework:spock-core:0.4-groovy-1.7"
+  testCompile "junit:junit:4.8.1"  
 }
 }}}
