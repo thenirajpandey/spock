@@ -1,4 +1,4 @@
-#Companies, projects, and individuals which are known to use Spock.
+#summary Companies, projects, and individuals which are known to use Spock.
 
 || [http://smarter-ecommerce.com Smarter Ecommerce] || [http://geb.codehaus.org/ Geb] ||
 || [http://sp.com.au Software Projects] || [http://gradle.org Gradle] ||
