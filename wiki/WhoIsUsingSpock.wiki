@@ -7,4 +7,4 @@
 || || [http://github.com/canoo/grasp Grasp] ||
 || || [http://spockframework.org Spock (eating our own dog food)] ||
 
-Please contact us if you'd like to see your name added to or removed from this list.
+Please leave us a note if you'd like to see your name added to or removed from this list.
