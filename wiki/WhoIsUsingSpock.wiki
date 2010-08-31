@@ -1,0 +1,10 @@
+#Companies, projects, and individuals which are known to use Spock.
+
+|| [http://smarter-ecommerce.com Smarter Ecommerce] || [http://geb.codehaus.org/ Geb] ||
+|| [http://sp.com.au Software Projects] || [http://gradle.org Gradle] ||
+|| || [http://grails.org Grails] ||
+|| || [http://github.com/gpc Grails Plugin Collective] ||
+|| || [http://github.com/canoo/grasp Grasp] ||
+|| || [http://spockframework.org Spock (eating our own dog food)] ||
+
+Please contact us if you'd like to see your name added to or removed from this list.
