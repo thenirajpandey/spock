@@ -94,7 +94,7 @@ mock.foo(_, !null, { it ==~ /a*b/ }) // any first arg, second arg non-null, thir
 // Constraints for varargs can be specified in list style or vararg style. Let's say we are mocking the following method: def foo(String... args)
 
 mock.foo(["one", "two"]) // list style
-mock.foo("one", "two") // vararg style
+mock.foo("one", "two")   // vararg style
 }}}
 
 === Return values ===
