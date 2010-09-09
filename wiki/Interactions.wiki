@@ -73,6 +73,8 @@ subscriber./set.*/(_) // any setter is called on subscriber (any regular express
 === Argument constraints ===
 
 {{{
+subscriber.receive()                       // no arguments
+
 subscriber.receive(_)                      // any argument
 
 subscriber.receive(!null)                  // any non-null argument
@@ -84,6 +86,15 @@ subscriber.receive(!event)                 // any argument not equal to event
 subscriber.receive(_ as Message)           // any argument that is-a Message (null is not allowed)
 
 subscriber.receive( { it.priority >= 5 } ) // custom constraint
+
+// For methods that take multiple arguments, specify one constraint per argument:
+
+mock.foo(_, !null, { it.baz ==~ /a*b/ }) // any first arg, second arg non-null, third arg matches the given regex
+
+// Constraints for varargs can be specified in list style or vararg style. Let's say we are mocking the following method: def foo(String... args)
+
+mock.foo(["one", "two"]) // list style
+mock.foo("one", "two") // vararg style
 }}}
 
 === Return values ===
