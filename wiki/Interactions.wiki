@@ -89,7 +89,7 @@ subscriber.receive( { it.priority >= 5 } ) // custom constraint
 
 // For methods that take multiple arguments, specify one constraint per argument:
 
-mock.foo(_, !null, { it.baz ==~ /a*b/ }) // any first arg, second arg non-null, third arg matches the given regex
+mock.foo(_, !null, { it ==~ /a*b/ }) // any first arg, second arg non-null, third arg matches the given regex
 
 // Constraints for varargs can be specified in list style or vararg style. Let's say we are mocking the following method: def foo(String... args)
 
