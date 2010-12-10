@@ -22,7 +22,7 @@ class UnrolledFeatureNameGeneratorSpec extends Specification {
   def "regex-like data values are substituted correctly (i.e. literally)"() {
     def feature = new FeatureInfo()
     feature.addParameterName("dataVar")
-    def nameGenerator = new UnrolledFeatureNameGenerator(feature, "foo #dataVar bar")
+    def nameGenerator = new UnrolledFeatureNameGenerator(feature, { "foo $dataVar bar" }.getClass())
 
     expect:
     nameGenerator.nameFor(value) == name
@@ -36,7 +36,7 @@ class UnrolledFeatureNameGeneratorSpec extends Specification {
   def "data values are converted to strings in Groovy style"() {
     def feature = new FeatureInfo()
     feature.addParameterName("dataVar")
-    def nameGenerator = new UnrolledFeatureNameGenerator(feature, "foo #dataVar bar")
+    def nameGenerator = new UnrolledFeatureNameGenerator(feature, { "foo $dataVar bar" }.getClass())
 
     expect:
     nameGenerator.nameFor(value) == name

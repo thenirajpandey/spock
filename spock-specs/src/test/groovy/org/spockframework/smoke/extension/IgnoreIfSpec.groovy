@@ -14,24 +14,15 @@
  * limitations under the License.
  */
 
-import grails.plugin.spock.IntegrationSpec
+package org.spockframework.smoke.extension
 
 import spock.lang.*
 
-class NonStepwiseTransactionsSpec extends IntegrationSpec {
-
-  def "insert a person"() {
-    when:
-    new Person(name: 'fred').save(failOnError: true)
-    
-    then:
-    Person.count() == 1
+@IgnoreIf({ 1 < 2 })
+class ConditionallyIgnoreSpec extends Specification {
+  def "should be ignored"() {
+    expect: false
   }
-  
-  def "person should not be there because its a different transaction"() {
-    expect:
-    Person.count() == 0
-  }
-  
-
 }
+
+

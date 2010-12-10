@@ -187,10 +187,6 @@ public class ConditionRewriter extends AbstractExpressionConverter<Expression> {
     unsupported(); // cannot occur in condition
   }
 
-  public void visitRegexExpression(RegexExpression expr) {
-    unsupported(); // unused AST node
-  }
-
   public void visitBinaryExpression(BinaryExpression expr) {
     BinaryExpression conversion =
         new BinaryExpression(
@@ -312,9 +308,9 @@ public class ConditionRewriter extends AbstractExpressionConverter<Expression> {
     MapExpression conversion =
         namedArgumentListExpr ?
             new NamedArgumentListExpression(
-                convertAll(expr.getMapEntryExpressions())) :
+                (List) convertAll(expr.getMapEntryExpressions())) :
             new MapExpression(
-                convertAll(expr.getMapEntryExpressions()));
+                (List) convertAll(expr.getMapEntryExpressions()));
 
     conversion.setSourcePosition(expr);
     result = namedArgumentListExpr ? recordNa(conversion) : record(conversion);

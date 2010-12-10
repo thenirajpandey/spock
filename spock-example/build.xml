@@ -27,7 +27,7 @@
       <dependency
         groupId="org.spockframework"
         artifactId="spock-core"
-        version="0.5-groovy-1.6" />
+        version="0.5-groovy-1.8" />
 <!-- Optional dependencies for using Spock -->
       <!-- enables mocking of classes (in addition to interfaces) -->
       <dependency 
@@ -43,7 +43,7 @@
       <dependency
         groupId="asm"
         artifactId="asm"
-        version="2.2.3" />
+        version="3.2" />
       <!-- only required if Hamcrest matchers are used -->
       <dependency
           groupId="org.hamcrest"
@@ -60,7 +60,11 @@
 <!-- Only required if a snapshot version of Spock is used -->
       <remoteRepository
         id="spock-snapshots"
-        url="http://m2repo.spockframework.org/snapshots/" />
+        url="http://m2repo.spockframework.org/snapshots/" />  
+<!-- Only required if a snapshot version of Groovy is used -->
+      <remoteRepository
+        id="groovy-snapshots"
+        url="http://snapshots.repository.codehaus.org/" />
     </artifact:dependencies>
   </target>
   

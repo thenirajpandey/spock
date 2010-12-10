@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.spockframework</groupId>
     <artifactId>spock-parent</artifactId>
-    <version>0.5-groovy-1.6</version>
+    <version>0.5-groovy-1.8</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -21,7 +21,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
+        <configuration> 
           <useFile>false</useFile>
         </configuration>
       </plugin>

@@ -18,63 +18,71 @@ package org.spockframework.runtime;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
+import groovy.lang.Closure;
+import groovy.lang.GroovyObjectSupport;
+import groovy.lang.MissingPropertyException;
+
+import org.spockframework.runtime.extension.ExtensionException;
 import org.spockframework.runtime.model.FeatureInfo;
-import org.spockframework.util.GroovyRuntimeUtil;
+import org.spockframework.util.NullSafe;
 
 /**
  * @author Peter Niederwieser
  */
 public class UnrolledFeatureNameGenerator {
-  private static final Pattern VARIABLE_PATTERN = Pattern.compile("#([a-zA-Z_\\$][\\w\\$]*)");
-
   private final FeatureInfo feature;
-  private final Matcher variableMatcher;
+  private final Class<? extends Closure> nameGeneratorClass;
   private final Map<String, Integer> parameterNameToPosition = new HashMap<String, Integer>();
-  private int iterationCount;
 
-  public UnrolledFeatureNameGenerator(FeatureInfo feature, String namePattern) {
+  private int iterationCount = -1;
+
+  public UnrolledFeatureNameGenerator(FeatureInfo feature, Class<? extends Closure> nameGeneratorClass) {
     this.feature = feature;
-    variableMatcher = VARIABLE_PATTERN.matcher(namePattern);
+    this.nameGeneratorClass = nameGeneratorClass;
 
     int pos = 0;
     for (String name : feature.getParameterNames())
       parameterNameToPosition.put(name, pos++);
   }
 
-  public String nameFor(Object[] args) {
-    StringBuffer result = new StringBuffer();
-    variableMatcher.reset();
-
-    while (variableMatcher.find()) {
-      String variableName = variableMatcher.group(1);
-      String value = getValue(variableName, args);
-      variableMatcher.appendReplacement(result, Matcher.quoteReplacement(value));
-    }
-
-    variableMatcher.appendTail(result);
+  public String nameFor(final Object[] args) {
     iterationCount++;
-    return result.toString();
-  }
 
-  private String getValue(String variableName, Object[] args) {
-    if (variableName.equals("featureName")) return feature.getName();
-    if (variableName.equals("iterationCount")) return String.valueOf(iterationCount);
+    if (nameGeneratorClass == Closure.class)
+      return String.format("%s[%d]", feature.getName(), iterationCount);
 
-    Integer pos = parameterNameToPosition.get(variableName);
-    if (pos == null) return "#" + variableName;
-
-    Object arg = args[pos];
+    Closure nameGenerator;
     try {
-      return GroovyRuntimeUtil.toString(arg);
-    } catch (Throwable t) {
-      // since arg is provided by user code, we must be ready for any exception
-      // to occur; rethrowing an exception would currently be interpreted as a
-      // Spock bug, because IRunSupervisor isn't supposed to throw exceptions;
-      // therefore, we just don't replace this variable
-      return "#" + variableName;
+      nameGenerator = nameGeneratorClass.getConstructor(Object.class, Object.class).newInstance(null, null);
+    } catch (Exception e) {
+      throw new ExtensionException("Failed to instantiate @Unroll naming pattern", e);
     }
+
+    Object delegate = new GroovyObjectSupport() {
+      @Override
+      public Object getProperty(String property) {
+        if (property.equals("featureName")) return feature.getName();
+        if (property.equals("iterationCount")) return String.valueOf(iterationCount);
+
+        Integer pos = parameterNameToPosition.get(property);
+        if (pos == null) throw new MissingPropertyException(
+            String.format("Cannot resolve data variable '%s'", property));
+
+        return args[pos];
+      }
+    };
+
+    nameGenerator.setResolveStrategy(Closure.DELEGATE_ONLY);
+    nameGenerator.setDelegate(delegate);
+
+    String name;
+    try {
+      name = NullSafe.toString(nameGenerator.call());
+    } catch (Exception e) {
+      throw new ExtensionException("Failed to evaluate @Unroll naming pattern", e);
+    }
+
+    return name;
   }
 }
