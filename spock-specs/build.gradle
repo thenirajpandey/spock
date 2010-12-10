@@ -9,6 +9,6 @@ project(":spock-specs") {
     testRuntime asm
     testRuntime cglib
     testRuntime objenesis
-    testRuntime h2database
+    testRuntime h2database  
   }
 }

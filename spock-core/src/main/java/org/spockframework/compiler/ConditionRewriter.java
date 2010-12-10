@@ -312,9 +312,9 @@ public class ConditionRewriter extends AbstractExpressionConverter<Expression> {
     MapExpression conversion =
         namedArgumentListExpr ?
             new NamedArgumentListExpression(
-                convertAll(expr.getMapEntryExpressions())) :
+                (List) convertAll(expr.getMapEntryExpressions())) :
             new MapExpression(
-                convertAll(expr.getMapEntryExpressions()));
+                (List) convertAll(expr.getMapEntryExpressions()));
 
     conversion.setSourcePosition(expr);
     result = namedArgumentListExpr ? recordNa(conversion) : record(conversion);

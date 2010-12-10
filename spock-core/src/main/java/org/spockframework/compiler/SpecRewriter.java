@@ -677,7 +677,7 @@ public class SpecRewriter extends AbstractSpecVisitor implements IRewriteResourc
         new CatchStatement(
             new Parameter(nodeCache.Throwable, "$spock_ex"),
             new BlockStatement(
-                Arrays.asList(
+                Arrays.<Statement> asList(
                     new ExpressionStatement(
                     new BinaryExpression(
                         thrownExceptionRef,

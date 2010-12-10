@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.spockframework</groupId>
   <artifactId>spock-example</artifactId>
-  <version>0.5-groovy-1.6</version>
+  <version>0.5-groovy-1.7</version>
   <packaging>jar</packaging>
   <name>Spock Framework - Example Project</name>
 
@@ -11,16 +12,16 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
-  
+
   <build>
-<!-- Mandatory plugins for using Spock -->
+    <!-- Mandatory plugins for using Spock -->
     <plugins>
       <plugin>
         <groupId>org.codehaus.gmaven</groupId>
         <artifactId>gmaven-plugin</artifactId>
         <version>1.3</version>
         <configuration>
-          <providerSelection>1.6</providerSelection>
+          <providerSelection>1.7</providerSelection>
         </configuration>
         <executions>
           <execution>
@@ -33,7 +34,7 @@
         <dependencies>
           <dependency>
             <groupId>org.codehaus.gmaven.runtime</groupId>
-            <artifactId>gmaven-runtime-1.6</artifactId>
+            <artifactId>gmaven-runtime-1.7</artifactId>
             <version>1.3</version>
             <exclusions>
               <exclusion>
@@ -45,25 +46,11 @@
           <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <version>1.6.9</version>
-            <exclusions> <!-- exclude optional dependencies that aren't marked as such (fixed in Groovy 1.7) -->
-              <exclusion>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-              </exclusion>
-              <exclusion>
-                <groupId>org.apache.ant</groupId>
-                <artifactId>ant</artifactId>
-              </exclusion>
-              <exclusion>
-                <groupId>org.apache.ant</groupId>
-                <artifactId>ant-launcher</artifactId>
-              </exclusion>
-            </exclusions>
+            <version>1.7.5</version>
           </dependency>
         </dependencies>
       </plugin>
-<!-- Optional plugins for using Spock --> 
+      <!-- Optional plugins for using Spock -->
       <plugin>
         <!-- 
           Finds all Spock specifications in this project, and configures Maven to run them
@@ -71,7 +58,8 @@
         -->
         <groupId>org.spockframework</groupId>
         <artifactId>spock-maven</artifactId>
-        <version>${project.version}</version> <!-- you need to specify a concrete version number here -->
+        <version>${project.version}</version>
+        <!-- you need to specify a concrete version number here -->
         <executions>
           <execution>
             <goals>
@@ -80,7 +68,7 @@
           </execution>
         </executions>
       </plugin>
-<!-- Only required if default Surefire configuration is not satisfactory -->
+      <!-- Only required if default Surefire configuration is not satisfactory -->
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.6</version>
@@ -88,7 +76,7 @@
           <useFile>false</useFile>
         </configuration>
       </plugin>
-<!-- Only required for spock-example build -->
+      <!-- Only required for spock-example build -->
       <plugin>
         <artifactId>maven-deploy-plugin</artifactId>
         <version>2.5</version>
@@ -100,15 +88,16 @@
   </build>
 
   <dependencies>
-<!-- Mandatory dependencies for using Spock -->
+    <!-- Mandatory dependencies for using Spock -->
     <dependency>
       <groupId>org.spockframework</groupId>
       <artifactId>spock-core</artifactId>
-      <version>${project.version}</version> <!-- you need to specify a concrete version number here -->
+      <version>${project.version}</version>
+      <!-- you need to specify a concrete version number here -->
       <scope>test</scope>
-    </dependency>    
-<!-- Optional dependencies for using Spock -->
-	  <dependency> <!-- enables mocking of classes (in addition to interfaces) -->	    
+    </dependency>
+    <!-- Optional dependencies for using Spock -->
+    <dependency> <!-- enables mocking of classes (in addition to interfaces) -->
       <groupId>cglib</groupId>
       <artifactId>cglib-nodep</artifactId>
       <version>2.2</version>
@@ -134,9 +123,9 @@
     </dependency>
   </dependencies>
 
-<!-- Only required if a snapshot version of Spock is used -->  
+  <!-- Only required if a snapshot version of Spock is used -->
   <repositories>
-    <repository>     
+    <repository>
       <id>spock-snapshots</id>
       <url>http://m2repo.spockframework.org/snapshots</url>
       <snapshots>
@@ -144,10 +133,10 @@
       </snapshots>
     </repository>
   </repositories>
-  
-<!-- Only required if a snapshot version of Spock's Maven plugin is used -->
+
+  <!-- Only required if a snapshot version of Spock's Maven plugin is used -->
   <pluginRepositories>
-    <pluginRepository>     
+    <pluginRepository>
       <id>spock-snapshots</id>
       <url>http://m2repo.spockframework.org/snapshots</url>
       <snapshots>
@@ -156,7 +145,7 @@
     </pluginRepository>
   </pluginRepositories>
 
-<!-- Only required for spock-example build -->  
+  <!-- Only required for spock-example build -->
   <distributionManagement>
     <repository>
       <id>foo</id>

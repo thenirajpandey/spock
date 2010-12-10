@@ -1,5 +1,5 @@
 project(":spock-spring") {
-  def springVersion = "2.5.6.SEC02"
+  def springVersion = "3.0.5.RELEASE"
 
   dependencies {
     compile project(":spock-core")

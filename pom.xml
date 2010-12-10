@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.spockframework</groupId>
   <artifactId>spock-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.5-groovy-1.6</version>
+  <version>0.5-groovy-1.7</version>
   <name>Spock Framework - Umbrella Project</name>
   <url>http://spockframework.org</url>
   <description>Spock is a testing and specification framework for Java and Groovy applications.</description>
@@ -26,8 +27,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <!-- can't switch to later versions until http://jira.codehaus.org/browse/GRAILS-6819 is fixed -->
-    <grails.version>1.2.3</grails.version>
+    <grails.version>1.3.4</grails.version>
   </properties>
 
   <build>
@@ -61,11 +61,10 @@
           <artifactId>gmaven-plugin</artifactId>
           <version>1.3</version>
           <configuration>
-            <providerSelection>1.6</providerSelection>
+            <providerSelection>1.7</providerSelection>
           </configuration>
           <executions>
             <execution>
-              <id>compile-groovy</id>
               <goals>
                 <goal>compile</goal>
                 <goal>testCompile</goal>
@@ -89,7 +88,7 @@
           <dependencies>
             <dependency>
               <groupId>org.codehaus.gmaven.runtime</groupId>
-              <artifactId>gmaven-runtime-1.6</artifactId>
+              <artifactId>gmaven-runtime-1.7</artifactId>
               <version>1.3</version>
               <exclusions>
                 <exclusion>
@@ -101,13 +100,17 @@
             <dependency>
               <groupId>org.codehaus.groovy</groupId>
               <artifactId>groovy-all</artifactId>
-              <version>1.6.9</version>
-              <exclusions> <!-- for some reason, the following dependencies aren't marked as optional in groovy-all POM -->
-                <exclusion>
-                  <groupId>junit</groupId>
-                  <artifactId>junit</artifactId>
-                </exclusion>
-              </exclusions>
+              <version>1.7.5</version>
+            </dependency>   
+            <dependency> <!-- required by GMaven's execute goal -->
+              <groupId>org.apache.ant</groupId>
+              <artifactId>ant</artifactId>    
+              <version>1.7.1</version>
+            </dependency>
+            <dependency> <!-- required by GMaven's execute goal -->
+              <groupId>org.apache.ant</groupId>
+              <artifactId>ant-launcher</artifactId>     
+              <version>1.7.1</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -132,21 +135,7 @@
       <dependency>
         <groupId>org.codehaus.groovy</groupId>
         <artifactId>groovy-all</artifactId>
-        <version>1.6.9</version>
-        <exclusions> <!-- for some reason, the following dependencies aren't marked as optional in groovy-all POM -->
-          <exclusion>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>org.apache.ant</groupId>
-            <artifactId>ant</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>org.apache.ant</groupId>
-            <artifactId>ant-launcher</artifactId>
-          </exclusion>
-        </exclusions>
+        <version>1.7.5</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
@@ -161,7 +150,7 @@
       <dependency>
         <groupId>asm</groupId>
         <artifactId>asm</artifactId>
-        <version>2.2.3</version> <!-- use same version as Groovy 1.6 -->
+        <version>3.2</version> <!-- use same version as Groovy 1.7 -->
       </dependency>
       <dependency>
         <groupId>cglib</groupId>
@@ -177,11 +166,12 @@
         <groupId>com.h2database</groupId>
         <artifactId>h2</artifactId>
         <version>1.2.147</version>
+        <scope>runtime</scope>
       </dependency>
       <dependency>
         <groupId>org.apache.ant</groupId>
         <artifactId>ant</artifactId>
-        <version>1.7.1</version> <!-- use same version as Groovy 1.6 -->
+        <version>1.8.1</version> <!-- use same version as Groovy 1.7 -->
       </dependency>
       <dependency>
         <groupId>log4j</groupId>
@@ -282,15 +272,15 @@
           <plugin>
             <artifactId>maven-javadoc-plugin</artifactId>
             <version>2.7</version>
-              <configuration>
-                <links>
-                  <link>http://java.sun.com/j2se/1.5.0/docs/api</link>
-                  <link>http://groovy.codehaus.org/gapi</link>
-                  <link>http://static.springsource.org/spring/docs/2.5.x/api</link>
-                  <link>http://google-guice.googlecode.com/svn/trunk/javadoc</link>
-                  <link>http://tapestry.apache.org/tapestry5/apidocs</link>
-                </links>
-              </configuration>
+            <configuration>
+              <links>
+                <link>http://java.sun.com/j2se/1.5.0/docs/api</link>
+                <link>http://groovy.codehaus.org/gapi</link>
+                <link>http://static.springsource.org/spring/docs/2.5.x/api</link>
+                <link>http://google-guice.googlecode.com/svn/trunk/javadoc</link>
+                <link>http://tapestry.apache.org/tapestry5/apidocs</link>
+              </links>
+            </configuration>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
