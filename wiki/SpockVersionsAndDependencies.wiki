@@ -20,4 +20,4 @@ Snapshots are available from http://m2repo.spockframework.org/snapshots.
 || 0.6-groovy-1.7-SNAPSHOT || 1.7.0-1.7.x  || 4.7-4.x || 1.3.0-1.3.x || 2.5.0-3.x ||
 || 0.6-groovy-1.8-SNAPSHOT || 1.8 snapshots || 4.7-4.x || - || 2.5.0-3.x ||
 
-Note: Grails version applies to Grails plugin. Spring version applies to Spring extension.
+Note: Grails version applies to [http://grails.org/plugin/spock Grails plugin]. Spring version applies to Spring extension.
