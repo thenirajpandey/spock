@@ -14,7 +14,7 @@ All deprecated elements will be removed in Spock 0.4.
 
  * Grails plugin base classes have been renamed from XYZSpecification to XYZSpec (e.g. UnitSpecification -> UnitSpec). The old classes have been deprecated and will be removed in Spock 0.5.
 
-== Version 0.5 (released 2010-05-25) ==
+== Version 0.5 (released 2010-12-11) ==
 
  * Classes deprecated in 0.4 (see above) have been removed.
  * Assignments in expect- and then-blocks are no longer allowed and will result in a compile error (with a helpful error message). Here is an example that works in 0.4, but no longer works in 0.5:
