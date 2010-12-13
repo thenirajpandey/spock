@@ -23,11 +23,11 @@ All deprecated elements will be removed in Spock 0.4.
 expect:
 def person = repo.findPerson("fred")
 person.isHappy()
-}}}
 
 and:
 person = repo.findPerson("barney") // no longer allowed
 person.isHappy()
+}}}
 
 To make this work in 0.5, either move the assignment to some other place (maybe it makes more sense to have it in a when-block anyway), or introduce another variable like so:
 
