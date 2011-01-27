@@ -1,6 +1,6 @@
 #summary Spock versions and their compatible Groovy/JUnit/Grails/etc. versions.
 
-Spock requires Java SE 5.0 or higher. Make sure to pick a Spock version that matches the Groovy version you'd like to use.
+Spock requires Java SE 5.0 or higher. Make sure to pick a Spock version that matches the Groovy version you would like to use.
 
 == Release Versions ==
 
