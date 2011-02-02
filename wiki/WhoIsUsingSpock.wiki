@@ -3,7 +3,7 @@
 == Projects ==
 
   * [http://geb.codehaus.org Geb]
-  * [http://gpars.codehaus.org/ GPars]
+  * [http://gpars.codehaus.org GPars]
   * [http://gradle.org Gradle]
   * [http://grails.org Grails]
   * [http://github.com/gpc Grails Plugin Collective]
@@ -12,7 +12,8 @@
 
 == Companies ==
 
-  * [http://corporate.be2.com/ be2]
+  * [http://corporate.be2.com be2]
+  * [http://www.eharmony.com eHarmony]
   * [http://energizedwork.com Energized Work]
   * [http://www.gennemtaenkt.dk Gennemtænkt IT]
   * [http://www.intelligrape.com IntelliGrape Software]
