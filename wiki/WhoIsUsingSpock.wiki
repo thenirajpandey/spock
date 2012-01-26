@@ -8,6 +8,7 @@
   * [http://grails.org Grails]
   * [http://github.com/gpc Grails Plugin Collective]
   * [http://github.com/canoo/grasp Grasp]
+  * [http://griffon.codehaus.org/ Griffon]
   * [http://spockframework.org Spock (eating our own dog food)]
   * [http://tapestry.apache.org Apache Tapestry]
 
