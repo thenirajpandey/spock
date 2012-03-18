@@ -1,6 +1,8 @@
 #summary Important changes between Spock versions that users should be aware of.
 #labels Featured
 
+<b>Note: This information has moved to http://docs.spockframework.org</b>
+
 == Version 0.3 (released 2009-11-19) ==
 
  * `@Speck` has been deprecated. The new way to turn a class into a specification is to extend class `spock.lang.Specification` (or a subclass thereof).
