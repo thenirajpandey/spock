@@ -21,7 +21,7 @@ The remainder of this page explains in detail how to run [HelloSpock HelloSpock.
 Detailed instructions for these two steps can be found in the [http://groovy.codehaus.org/Tutorial+1+-+Getting+started Groovy tutorial].
 
  * Download junit-4.9.jar ([http://sourceforge.net/projects/junit/files/ download page])
- * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.6-groovy-1.8/spock-core-0.6-groovy-1.8 spock-core-0.6-groovy-1.8]
+ * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.6-groovy-1.8/spock-core-0.6-groovy-1.8.jar spock-core-0.6-groovy-1.8.jar]
  * Create a file named !HelloSpock.groovy with the following content: [HelloSpock HelloSpock.groovy]
  * Run !HelloSpock with `groovy -cp "junit-4.9.jar:spock-core-0.6.jar" HelloSpock` (make sure the classpath is correct; on Windows, separate classpath entries with `;` instead of `:`)
 
@@ -70,7 +70,7 @@ For IDEA 9, 10, 11:
 
  * Download and extract Groovy 1.8.6 binary release ([http://groovy.codehaus.org/Download download page])
  * Download junit-4.9.jar ([http://sourceforge.net/projects/junit/files/ download page]) 
- * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.6-groovy-1.8/spock-core-0.6-groovy-1.8 spock-core-0.6-groovy-1.8]
+ * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.6-groovy-1.8/spock-core-0.6-groovy-1.8.jar spock-core-0.6-groovy-1.8.jar]
  * Create a new IDEA project named !HelloSpock and add a Java module.
  * In "Module settings", add a "Single-Entry Module Library" for groovy-all-1.8.6.jar, junit-4.9.jar, and spock-core-0.6.jar
  * In the src folder, create a Groovy class named !HelloSpock with the following content: [HelloSpock HelloSpock.groovy]
