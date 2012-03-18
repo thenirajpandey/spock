@@ -1,7 +1,7 @@
 #summary Important changes between Spock versions that users should be aware of.
 #labels Featured
 
-<b>Note: This information has moved to http://docs.spockframework.org</b>
+<b>Note: This information has moved to http://docs.spockframework.org/en/latest/migration_guide.html</b>
 
 == Version 0.3 (released 2009-11-19) ==
 
