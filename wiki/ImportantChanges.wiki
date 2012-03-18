@@ -1,5 +1,4 @@
 #summary Important changes between Spock versions that users should be aware of.
-#labels Featured
 
 <b>Note: This information has moved to http://docs.spockframework.org/en/latest/migration_guide.html</b>
 
