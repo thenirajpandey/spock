@@ -13,10 +13,8 @@ Need help? Ask in our [http://groups.google.com/group/spockframework forum]!
 
 ----
 
-The remainder of this page explains in detail how to run [HelloSpock HelloSpock.groovy] in the following environments:
+The remainder of this page explains in detail how to run [HelloSpock HelloSpock.groovy] in different environments.
 
-<wiki:toc />
- 
 == Command line ==
 
  * Download and setup Java 5 or higher (JRE will do for our purposes)
