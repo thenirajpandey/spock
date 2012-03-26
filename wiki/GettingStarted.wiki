@@ -13,7 +13,7 @@ Need help? Ask in our [http://groups.google.com/group/spockframework forum]!
 
 ----
 
-The remainder of this page explains in detail how to run [HelloSpock HelloSpock.groovy] in different environments.
+The remainder of this page explains in detail how to manually setup Spock in various environments.
 
 == Command line ==
 
