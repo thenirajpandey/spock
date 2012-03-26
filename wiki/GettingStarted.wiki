@@ -53,22 +53,25 @@ Verified against Maven 2.1
 
 == Eclipse ==
 
-The Groovy Eclipse plugin provides solid Spock support.
+Verified against Eclipse 3.6, 3.7
 
-*Important Information:* 
- * Make sure to use the latest release or snapshot version of the Groovy Eclipse plugin.
- * After installing the Groovy Eclipse plugin, enable the following option: Preferences->Groovy->Use monospace font for JUnit. Now all output in the JUnit view should use the editor font (this is especially important for Spock's condition output shown in the screenshot below). If this doesn't work immediately, uncheck the option, press 'Apply', and check the option again.
+ * Install the [http://groovy.codehaus.org/Eclipse+Plugin Groovy Eclipse Plugin]
+    Important: Make sure to use the latest release or snapshot version of the Groovy Eclipse plugin.
+ * Enable the following option: Preferences->Groovy->Use monospace font for JUnit. This is important for Spock's condition output to be aligned correctly. If this doesn't work immediately, uncheck the option, press 'Apply', and check the option again.
  * For Eclipse 3.5 and below, make sure you have a source attachment set for the spock-core Jar. (Otherwise you might run into the following Eclipse JDT bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=175582) For Maven projects, the easiest way to achieve this is `mvn eclipse:eclipse -DdownloadSources`.  
+ * Create a new Java project named !HelloSpock
+ * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.6-groovy-1.8/spock-core-0.6-groovy-1.8.jar spock-core-0.6-groovy-1.8.jar]
+ * Add JUnit 4 (4.7 or higher) and spock-core-0.6-groovy-1.8.jar to the project's class path 
+ * In the src folder, create a Groovy class named !HelloSpock with the following content: [HelloSpock HelloSpock.groovy]
+ * In Project Explorer, right-click !HelloSpock and select Run As -> JUnit Test
 
 Here is a screenshot of Spock in action: 
 
 [http://svn.spockframework.org/wiki/HelloSpockScreenshotEclipse.png]
 
-For more information on the Groovy Eclipse plugin, go to http://groovy.codehaus.org/Eclipse+Plugin.
-
 == IntelliJ IDEA ==
 
-For IDEA 9, 10, 11:
+Verified against IDEA 10, 11
 
  * Download and extract Groovy 1.8.6 binary release ([http://groovy.codehaus.org/Download download page])
  * Download junit-4.9.jar ([http://sourceforge.net/projects/junit/files/ download page]) 
@@ -76,7 +79,7 @@ For IDEA 9, 10, 11:
  * Create a new IDEA project named !HelloSpock and add a Java module.
  * In "Module settings", add a "Single-Entry Module Library" for groovy-all-1.8.6.jar, junit-4.9.jar, and spock-core-0.6.jar
  * In the src folder, create a Groovy class named !HelloSpock with the following content: [HelloSpock HelloSpock.groovy]
- * In the "Project" window, right-click on !HelloSpock and select "Run" 
+ * In the "Project" window, right-click !HelloSpock and select "Run" 
 
 [http://svn.spockframework.org/wiki/HelloSpockScreenshotIdea.png]
 
