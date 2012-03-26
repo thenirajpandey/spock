@@ -7,7 +7,7 @@ The easiest way to get to know Spock is http://webconsole.spockframework.org, wh
 
 == Spock Example Project ==
 
-If you prefer to run Spock on your machine, just download [https://github.com/spockframework/spock-example/zipball/0.6 spock-example-0.6.zip] and type `./gradlew test` (Windows: `gradlew test`). Seconds later, you will be running your first Spock specifications. The only prerequisite is that you have JDK 5 or higher installed; everything else will be downloaded automatically. Also included are build scripts for Ant and Maven and instructions how to generate an Eclipse or IDEA project. For more information, see the README file.
+If you prefer to run Spock on your machine, just download [https://github.com/spockframework/spock-example/zipball/0.6 spock-example-0.6.zip] (or clone the [https://github.com/spockframework/spock-example Git repository]) and type `./gradlew test` (Windows: `gradlew test`). Seconds later, you will be running your first Spock specifications. The only prerequisite is that you have JDK 5 or higher installed; everything else will be downloaded automatically. Also included are build scripts for Ant and Maven, and instructions how to generate an Eclipse or IDEA project. For more information, see the README file.
 
 Need help? Ask in our [http://groups.google.com/group/spockframework forum]!
 
