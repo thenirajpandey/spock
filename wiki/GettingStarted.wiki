@@ -67,7 +67,7 @@ Verified against Eclipse 3.6, 3.7
 
 Here is a screenshot of Spock in action: 
 
-[http://svn.spockframework.org/wiki/HelloSpockScreenshotEclipse.png]
+[http://code.google.com/p/spock/source/browse/wiki/HelloSpockScreenshotEclipse.png]
 
 == IntelliJ IDEA ==
 
@@ -81,7 +81,7 @@ Verified against IDEA 10, 11
  * In the src folder, create a Groovy class named !HelloSpock with the following content: [HelloSpock HelloSpock.groovy]
  * In the "Project" window, right-click !HelloSpock and select "Run" 
 
-[http://svn.spockframework.org/wiki/HelloSpockScreenshotIdea.png]
+[http://code.google.com/p/spock/source/browse/wiki/HelloSpockScreenshotIdea.png]
 
 == Netbeans ==
 
