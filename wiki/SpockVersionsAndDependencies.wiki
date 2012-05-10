@@ -4,7 +4,7 @@ Spock requires Java SE 5.0 or higher. Make sure to pick a Spock version that mat
 
 == Release Versions ==
 
-Releases are available from http://repo1.maven.org/maven2/org/spockframework and http://m2repo.spockframework.org/releases.
+Releases are available from http://repo1.maven.org/maven2/ (group ID: org.spockframework).
 
 || Spock version || Groovy version || JUnit version || Grails version || Spring version ||
 || 0.5-groovy-1.6 || 1.6.1-1.6.x  || 4.7-4.x || 1.2.0-1.2.x || 2.5.0-3.x ||
@@ -16,10 +16,10 @@ Note: Grails version applies to [http://grails.org/plugin/spock Grails plugin]. 
 
 == Snapshot Versions ==
 
-Snapshots are available from http://m2repo.spockframework.org/snapshots.
+Snapshots are available from http://oss.sonatype.org/content/repositories/snapshots/ (group ID: org.spockframework).
 
 || Spock version || Groovy version || JUnit version || Grails version || Spring version ||
 || 0.7-groovy-1.8-SNAPSHOT || 1.8.1 - 1.8.x || 4.7-4.x || 2.0-2.x || 2.5.0-3.x ||
-|| 0.7-groovy-2.0-SNAPSHOT || recent 2.0 snapshots || 4.7-4.x || - || 2.5.0-3.x ||
+|| 0.7-groovy-2.0-SNAPSHOT || 2.0.0-beta-3 || 4.7-4.x || - || 2.5.0-3.x ||
 
 Note: Grails version applies to [http://grails.org/plugin/spock Grails plugin]. Spring version applies to SpringExtension.
