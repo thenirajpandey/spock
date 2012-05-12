@@ -94,7 +94,7 @@ Whereas the first and last phases are optional, the stimulus and response phases
  
 === Blocks ===
 
-<img src="http://svn.spockframework.org/wiki/Blocks2Phases.png" align="right"/>
+<img src="http://spock.googlecode.com/svn/wiki/Blocks2Phases.png" align="right"/>
 
 Spock has built-in support for implementing each of the conceptual phases of a feature method. To this end, feature methods are structured into so-called _blocks_. Blocks start with a label, and extend to the beginning of the next block, or the end of the method. There are six kinds of blocks: `setup`, `when`, `then`, `expect`, `cleanup`, and `where` blocks. Any statements between the beginning of the method and the first explicit block belong to an implicit `setup` block.
 
