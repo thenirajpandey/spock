@@ -2,6 +2,7 @@
 
 == Projects ==
 
+  * [https://github.com/Netflix/asgard Asgard]
   * [http://geb.codehaus.org Geb]
   * [http://gpars.codehaus.org GPars]
   * [http://gradle.org Gradle]
@@ -19,10 +20,12 @@
   * [http://bemoko.com/bemoko/i bemoko]
   * [http://corporate.sky.com/ BSkyB]
   * [http://ctisn.com CTI Digital]
+  * [http://www.donewtech.com Donewtech Solutions]
   * [http://www.eharmony.com eHarmony]
   * [http://energizedwork.com Energized Work]
   * [http://www.gennemtaenkt.dk Gennemtænkt IT]
   * [http://www.intelligrape.com IntelliGrape Software]
+  * [http://www.netflix.com Netflix]
   * [http://smarter-ecommerce.com Smarter Ecommerce]
   * [http://stermedia.eu STERMEDIA Sp. z o.o.]
   * [http://sp.com.au Software Projects]
