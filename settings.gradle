@@ -1,2 +1,0 @@
-include 'spock-core', 'spock-specs', 'spock-tapestry', 'spock-guice', 'spock-spring', 'spock-unitils'
-
