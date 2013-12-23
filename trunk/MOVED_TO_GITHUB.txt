@@ -1,0 +1,1 @@
+This Subversion repository is obsolete. Since January 2011, all development happens at http://github.spockframework.org/spock.
