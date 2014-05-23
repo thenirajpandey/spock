@@ -32,6 +32,7 @@
   * [http://www.jfrog.com JFrog]
   * [http://www.lundogbendsen.dk Lund&Bendsen]
   * [http://www.mapquest.com MapQuest]
+  * [http://www.metavera.com/ Metavera Solutions Inc.] 
   * [http://www.netflix.com Netflix]
   * [http://www.sabre.com Sabre]
   * [http://www.sony.com Sony]
