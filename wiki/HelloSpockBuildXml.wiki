@@ -29,10 +29,10 @@
       <dependency
         groupId="org.spockframework"
         artifactId="spock-core"
-        version="0.6-groovy-1.8" />    
+        version="0.7-groovy-2.0" />    
       <remoteRepository
         id="maven-central"
-        url="http://repo1.maven.org/maven2/" />
+        url="https://repo1.maven.org/maven2/" />
       <remoteRepository
         id="spock-snapshots"
         url="https://oss.sonatype.org/content/repositories/snapshots/" />
