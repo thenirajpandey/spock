@@ -18,14 +18,14 @@ The remainder of this page explains in detail how to manually setup Spock in var
 == Command line ==
 
  * Download and setup Java 5 or higher (JRE will do for our purposes)
- * Download and setup Groovy 1.8.6 binary release ([http://groovy.codehaus.org/Download download page])
+ * Download and setup Groovy 2.x binary release ([http://groovy.codehaus.org/Download download page])
 
 Detailed instructions for these two steps can be found in the [http://groovy.codehaus.org/Tutorial+1+-+Getting+started Groovy tutorial].
 
- * Download junit-4.9.jar ([http://sourceforge.net/projects/junit/files/ download page])
- * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.6-groovy-1.8/spock-core-0.6-groovy-1.8.jar spock-core-0.6-groovy-1.8.jar]
+ * Download junit-4.12.jar ([https://github.com/junit-team/junit/releases download page])
+ * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.7-groovy-2.0/spock-core-0.7-groovy-2.0.jar spock-core-0.7-groovy-2.0.jar]
  * Create a file named !HelloSpock.groovy with the following content: [HelloSpock HelloSpock.groovy]
- * Run !HelloSpock with `groovy -cp "junit-4.9.jar:spock-core-0.6.jar" HelloSpock` (make sure the classpath is correct; on Windows, separate classpath entries with `;` instead of `:`)
+ * Run !HelloSpock with `groovy -cp "junit-4.12.jar:spock-core-0.7-groovy-2.0.jar" HelloSpock` (make sure the classpath is correct; on Windows, separate classpath entries with `;` instead of `:`)
 
 == Ant ==
 
@@ -60,8 +60,8 @@ Verified against Eclipse 3.6, 3.7
  * Enable the following option: Preferences->Groovy->Use monospace font for JUnit. This is important for Spock's condition output to be aligned correctly. If this doesn't work immediately, uncheck the option, press 'Apply', and check the option again.
  * For Eclipse 3.5 and below, make sure you have a source attachment set for the spock-core Jar. (Otherwise you might run into the following Eclipse JDT bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=175582) For Maven projects, the easiest way to achieve this is `mvn eclipse:eclipse -DdownloadSources`.  
  * Create a new Java project named !HelloSpock
- * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.6-groovy-1.8/spock-core-0.6-groovy-1.8.jar spock-core-0.6-groovy-1.8.jar]
- * Add JUnit 4 (4.7 or higher) and spock-core-0.6-groovy-1.8.jar to the project's class path 
+ * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.7-groovy-2.0/spock-core-0.7-groovy-2.0.jar spock-core-0.7-groovy-2.0.jar]
+ * Add JUnit 4 (4.7 or higher) and spock-core-0.7-groovy-2.0.jar to the project's class path 
  * In the src folder, create a Groovy class named !HelloSpock with the following content: [HelloSpock HelloSpock.groovy]
  * In Project Explorer, right-click !HelloSpock and select Run As -> JUnit Test
 
@@ -73,11 +73,11 @@ Here is a screenshot of Spock in action:
 
 Verified against IDEA 10, 11
 
- * Download and extract Groovy 1.8.6 binary release ([http://groovy.codehaus.org/Download download page])
- * Download junit-4.9.jar ([http://sourceforge.net/projects/junit/files/ download page]) 
- * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.6-groovy-1.8/spock-core-0.6-groovy-1.8.jar spock-core-0.6-groovy-1.8.jar]
+ * Download and extract Groovy 2.x binary release ([http://groovy.codehaus.org/Download download page])
+ * Download junit-4.12.jar ([https://github.com/junit-team/junit/releases download page]) 
+ * Download [http://repo1.maven.org/maven2/org/spockframework/spock-core/0.7-groovy-2.0/spock-core-0.7-groovy-2.0.jar spock-core-0.7-groovy-2.0.jar]
  * Create a new IDEA project named !HelloSpock and add a Java module.
- * In "Module settings", add a "Single-Entry Module Library" for groovy-all-1.8.6.jar, junit-4.9.jar, and spock-core-0.6.jar
+ * In "Module settings", add a "Single-Entry Module Library" for groovy-all-2.x.jar, junit-4.12.jar, and spock-core-0.7-groovy-2.0.jar
  * In the src folder, create a Groovy class named !HelloSpock with the following content: [HelloSpock HelloSpock.groovy]
  * In the "Project" window, right-click !HelloSpock and select "Run" 
 
