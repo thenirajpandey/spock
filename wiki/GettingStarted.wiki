@@ -7,7 +7,7 @@ The easiest way to get to know Spock is http://webconsole.spockframework.org, wh
 
 == Spock Example Project ==
 
-If you prefer to run Spock on your machine, just download [https://github.com/spockframework/spock-example/zipball/0.6 spock-example-0.6.zip] (or clone the [https://github.com/spockframework/spock-example Git repository]) and type `./gradlew test` (Windows: `gradlew test`). Seconds later, you will be running your first Spock specifications. The only prerequisite is that you have JDK 5 or higher installed; everything else will be downloaded automatically. Also included are build scripts for Ant and Maven, and instructions how to generate an Eclipse or IDEA project. For more information, see the README file.
+If you prefer to run Spock on your machine, just clone the [https://github.com/spockframework/spock-example spock-example Git repository] and type `./gradlew test` (Windows: `gradlew test`). Seconds later, you will be running your first Spock specifications. The only prerequisite is that you have JDK 5 or higher installed; everything else will be downloaded automatically. Also included are build scripts for Ant and Maven, and instructions how to generate an Eclipse or IDEA project. For more information, see the README file.
 
 Need help? Ask in our [http://groups.google.com/group/spockframework forum]!
 
@@ -27,29 +27,9 @@ Detailed instructions for these two steps can be found in the [http://groovy.cod
  * Create a file named !HelloSpock.groovy with the following content: [HelloSpock HelloSpock.groovy]
  * Run !HelloSpock with `groovy -cp "junit-4.12.jar:spock-core-0.7-groovy-2.0.jar" HelloSpock` (make sure the classpath is correct; on Windows, separate classpath entries with `;` instead of `:`)
 
-== Ant ==
+== Ant/Gradle/Maven ==
 
-Verified against Ant 1.8
-
- * Create file build.xml with the following content: [HelloSpockBuildXml build.xml]
- * Create file src/!HelloSpock.groovy with the following content: [HelloSpock HelloSpock.groovy]
- * Run !HelloSpock with `ant test`
- 
-== Gradle ==
-
-Verified against Gradle 1.0-milestone-9
-
- * Create file build.gradle with the following content: [HelloSpockGradleScript build.gradle]
- * Create file src/test/groovy/!HelloSpock.groovy with the following content: [HelloSpock HelloSpock.groovy]
- * Run !HelloSpock with `gradle test`
-
-== Maven ==
-
-Verified against Maven 2.1
-
- * Create file pom.xml with the following content: [HelloSpockPom pom.xml]
- * Create file src/test/groovy/!HelloSpock.groovy with the following content: [HelloSpock HelloSpock.groovy]
- * Run !HelloSpock with `mvn test`
+See the [https://github.com/spockframework/spock-example spock-example build].
 
 == Eclipse ==
 
